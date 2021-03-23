@@ -1,0 +1,39 @@
+body{
+background-color: ivory;
+background-image: url('picture.png');
+background-size: 1550px 900px;
+
+}
+.heading{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: inline-flex;
+    background-color: lightcoral;
+    color:white;
+    padding-right:100px;
+    padding-left:20px;
+}
+.login{
+    margin-left:50px;
+    margin-top:20px;
+    margin-right:50px;
+    
+    }
+
+.login a{
+    text-decoration: none;
+    color:white;
+   border-radius: 6px;
+   border: 3px solid white;
+   box-shadow:2px 2px 2px 2px white;
+   padding: 2px 2px 1px 1px;
+}
+
+.about{
+ margin:-100px 100px 20px 950px;
+color:black
+}
+.imageb{
+   
+margin: 100px 10px 10px 10px ;
+
+}
