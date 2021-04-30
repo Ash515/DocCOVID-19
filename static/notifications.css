@@ -1,0 +1,42 @@
+body{
+    background-color:brown;
+    color:white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.window{
+    background-color: aliceblue;
+    color:black;
+    width:700px;
+    height:500px;
+    margin-left:400px;
+    margin-top:50px;
+    border-radius: 10px;
+}
+.window h2{
+    margin-left:250px;
+    padding-top: 20px;  
+}
+.window h3{
+
+    margin-left:250px;
+ }
+ .window ul li h3{
+    margin-left:210px;
+ }
+.window li{
+    list-style-type: none;
+    
+}
+.profile{
+    margin-left:250px;
+}
+.profile h3{
+    margin-left:0px;
+    background-color: blue;
+    color:white;
+    width:300px;
+    padding-left: 10px;
+}
+.filehandler{
+    margin-left: 250px;
+}

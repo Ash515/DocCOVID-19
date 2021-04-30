@@ -1,0 +1,55 @@
+<html>
+    <title>Symptom page</title>
+    <head>
+        <meta name="viewpoint" width="device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='symptom.css')}}">
+    </head>
+
+<body>
+    <section clss="page">
+        <form action="">
+          <div class="container">
+            <center><h1>Mention your symptoms</h1></center>
+                <hr>
+        
+            <label class="container">Chest pain
+                <input type="checkbox" checked="checked">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">Difficulty/Shortness of Breath
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">Fatigue in living place
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">Fever
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">Low Appetite
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">Muscle Pain
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+           <select id="genders">
+               <option>Male</option>
+               <option>Female</option>
+               <option>Others</option>
+           </select>
+            
+            
+            <hr>
+            
+            <button type="submit" class="registerbtn">SUBMIT</button>
+          </div>
+          
+         
+        </form>
+        </section>
+</body>
+</html>

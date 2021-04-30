@@ -1,0 +1,57 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url("/images/corona.jpg");
+    background-position: cover;
+}
+.main{
+   background-color: rgba(255, 166, 0, 0.589);
+   color:white;
+   margin-left:10px;
+   width:1480px;
+   height:50px;
+   padding-left: 20px;
+   border-radius: 10px;
+}
+.docreg{
+    background-color: aqua;
+    width:700px;height:50px;
+    margin-left: 50px;
+    padding-left: 20px;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+.signin{
+    background-color: rgb(170, 206, 170);
+    color:white;
+    width:90px;height:30px;
+    margin-left:50px;margin-top: 20px;
+    border-radius: 10px;
+}
+.signin a{
+    text-decoration: none;
+    color:white;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.signup{
+    background-color: rgb(32, 209, 32);
+    color:white;
+    width:90px;height:30px;
+    margin-left:50px;margin-top: 20px;
+    border-radius: 10px;
+}
+.signup a{
+    text-decoration: none;
+    color:white;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.log{
+    padding-top: 20px;
+    margin-top: 90px;
+    background-color: rgb(79, 79, 100);
+    width:600px;
+    height:200px;
+    border-radius: 10px;
+    margin-left: 40px;
+}

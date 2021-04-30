@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='docreg.css')}}">
+    <style>
+        body{
+  background-color: #403a94;
+}
+  h3{
+    color:white;
+  }
+.hea{
+background-color: #ff00ea;
+color:black;
+margin: 20px 670px 200px 200px;
+align-content: center;
+}
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0 30px 5px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=password], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0 30px 5px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 10px ;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin: 0px 20px 20px 20px;
+}
+    </style>
+    
+</head>
+<body style="padding: 5px 250px 5px 20px; background-image: url('userpic.png');
+">
+
+<div class="hea"><center><h3> Doctor Sign In</h3></center>
+
+<div>
+  <form action="/doclog" method='POST'>
+   
+
+    <label for="email">email</label>
+    <input type="text" id="ename" name="doc_email" placeholder="honio@gmail.com">
+    
+    <label for="password">Password</label>
+    <input type="password" id="password" name="doc_psw" placeholder="type password">
+    
+   
+ 
+    <input type="submit" value="Login">
+  </form>
+</div>
+
+</body>
+</html>

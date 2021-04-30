@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='userreg.css')}}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div class="log"><center><h2>User Registration</h2></center></div>
+
+<form action="/userreg" method="post">
+
+
+  <div class="container">
+    <label for="uname"><b><font color="white">Username</font></b></label>
+    <input type="text" placeholder="Enter Username" name="user_uname" required>
+    <label for="email"><b><font color="white">Email</font></b></label>
+    <input type="text" placeholder="abc@gmail.com" name="user_email" required>
+
+
+    <label for="psw"><b><font color="white">Password</font></b></label>
+    <input type="password" placeholder="Enter Password" name="user_psw" required>
+        
+    <button type="submit"><font color="black"><b>Register</b></font></button>
+  
+  </div>
+
+  <div class="container" style="background-color:#566b25">
+   <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+
+  </div>
+</form>
+
+</body>
+</html>

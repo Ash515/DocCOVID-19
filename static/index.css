@@ -1,0 +1,87 @@
+body{
+
+background-image: url('images/corona.jpg');
+background-size: 1550px 900px;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+
+}
+.heading{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: inline-flex;
+    background-color: rgb(31, 21, 82);
+    color:white;
+    padding-right:100px;
+    padding-left:20px;
+    border-radius: 10px;
+    width:1400px;
+}
+.user-log{
+    margin-left:20px;
+    margin-top:20px;
+    margin-right:50px;
+}
+.user-log a{
+    text-decoration: none;
+    color:white;
+   border-radius: 6px;
+   border: 3px solid white;
+   box-shadow:2px 2px 2px 2px white;
+   padding: 2px 2px 1px 1px;
+}
+.doc-log{
+    margin-left:20px;
+    margin-top:20px;
+    margin-right:50px;
+}
+.doc-log a{
+    text-decoration: none;
+    color:white;
+   border-radius: 6px;
+   border: 3px solid white;
+   box-shadow:2px 2px 2px 2px white;
+   padding: 2px 2px 1px 1px;
+}
+
+.about{
+
+margin-left: 300px;
+color:white;
+background-color:rgb(69, 51, 92);
+padding-left: 30px;padding-right: 10px;padding-bottom: 10px;padding-top: 10px;
+border-radius: 5px;
+margin-top: 20px;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.user-login{
+    display:inline-flex;
+    background-image: url('images/corona.jpg');
+    background-color:rgb(110, 19, 19);
+    margin-left: 500px;
+    margin-top: 30px;
+    padding-left: 20px;
+    padding-right: 30px;
+  border-radius: 10px;
+    width:500px;
+    height:200px;
+    color:white;
+}
+.user-login h3{
+    margin-left:150px;
+}
+.user-log{
+    margin-left:150px;
+}
+#doc-login-h3{
+    margin-left:20px;
+}
+.main{
+    display: inline-flex;
+  
+
+}
+.main-abt{
+    display: inline-flex;
+  
+}

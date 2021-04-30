@@ -1,0 +1,26 @@
+body{
+  background-color: rgb(161, 113, 96);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h3{
+color:white;
+font-weight: bold;
+margin-left: 30px;
+margin-top: 30px;
+
+}
+#notification-list{
+   background-color: white;
+   width:1400px;
+   height:100px;
+   border-radius: 10px;
+}
+li{
+  list-style-type: none;
+}
+ a{
+  text-decoration: none;
+}
+.name{
+  margin-left: 20px;padding-top:20px;
+}

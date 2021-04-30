@@ -1,0 +1,45 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type=text/css href="{{url_for('static',filename='profile.css')}}">
+</head>
+<body>
+<section class="page"> 
+<form action="">
+  <div class="container">
+    <center><h1>User Information</h1></center>
+        <hr>
+
+    <label for="name"><b>Name</b></label>
+    <input type="text" placeholder="Enter Name" name="name" id="email" required>
+
+    <label for="email"><b>Age</b></label>
+    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+    <label for="dob"><b>Date of Birth</b></label>
+    <input type="text" placeholder="D.O.B" name="dob" id="dob" required>
+    <label for="gender"><b>Gender</b></label>
+   <select id="genders">
+       <option>Male</option>
+       <option>Female</option>
+       <option>Others</option>
+   </select>
+    <label for="bloodgroup"><b>Blood group</b></label>
+    <input type="bloodgroup" placeholder="Bloodgroup" name="bloodgroup" id="bloodgroup" required>
+
+    <label for="phone number"><b>Phone Number</b></label>
+    <input type="number" placeholder="Phone number" name="pnumber" id="pnumber" required>
+
+    <label for="address"><b>Address</b></label>
+    <input type="address" placeholder="Enter address" name="address" id="address" required>
+
+    
+    <hr>
+    
+    <button type="submit" class="registerbtn">Save</button>
+  </div>
+  
+ 
+</form>
+</section>
+</body>
+</html>
