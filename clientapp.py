@@ -1,11 +1,16 @@
 from flask import Flask, render_template,url_for,redirect,flash, request, redirect,session
-from  pymongo import MongoClient
+from flask_mysqldb import MySQL
+import MySQLdb.cursors
 import bcrypt
+import re
 app=Flask(__name__,template_folder='templates')
-client=MongoClient("mongodb://127.0.0.1:27017")
-db=client.covid
-patients=db.patients
-doctors=db.doctors
+
+app.config['MYSQL_HOST']='localhost'
+app.config['MYSQL_USER']='root'
+app.config['MYSQL_PASSWORD']=''
+app.config['MYSQL_DB']='coviddetection'
+mysql=MySQL(app)
+
 
 @app.route('/')
 def index():
@@ -19,7 +24,8 @@ def userlogin():
     if request.method == "POST":
         username= request.form.get("user_uname")
         password = request.form.get("user_psw")
-        username_found = patients.find_one({"username": username})
+        cursor=mysql.connection.cursor()
+        username_found = cursor.execute(''' SELECT * FROM patients WHERE pname="username" ''')
         if username_found:
             username_val = username_found['username']
             passwordcheck = username_found['password']
@@ -37,19 +43,33 @@ def userlogin():
     return render_template('userlog.html', message=message)
 
 @app.route('/userreg',methods=["GET","POST"])
-def userregister():
-    if request.method == 'POST':
-        existing_user = patients.find_one({'username' : request.form['username']})
-        email = patients.find_one({'email' : request.form['email']})
-        if existing_user is None:
-            hashpass = bcrypt.hashpw(request.form['user_psw'].encode('utf-8'), bcrypt.gensalt())
-            patients.insert({'username' : request.form['username'], 'password' : hashpass,'email':email})
-            session['username'] = request.form['username']
-            return render_template('userlog.html')
-        return 'That username already exists!'
+def userregistration():
+    msg = ''
+    if request.method == 'POST' and 'username' in request.form and 'userpassword' in request.form and 'useremail' in request.form :
+        username = request.form['user_name']
+        userpassword = request.form['user_psw']
+        useremail = request.form['user_email']
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('''SELECT pemail FROM patients WHERE pemail = % s''', (useremail))
+        paccount = cursor.fetchone()
+        if paccount:
+            msg = 'Account already exists !'
+        elif not re.match(r'[^@]+@[^@]+\.[^@]+', useremail):
+            msg = 'Invalid email address !'
+        elif not re.match(r'[A-Za-z0-9]+', username):
+            msg = 'Username must contain only characters and numbers !'
+        elif not username or not userpassword or not useremail:
+            msg = 'Please fill out the form !'
+        else:
+            cursor.execute('''INSERT INTO patients VALUES ( % s, % s, % s)''', (username,  useremail, userpassword))
+            mysql.connection.commit()
+            cursor.close()
+            msg = 'You have successfully registered !'
+    elif request.method == 'POST':
+        msg = 'Please fill out the form !'
+    return render_template('userreg.html', msg = msg)
 
-    return render_template('userreg.html')
-
+'''
 @app.route('/doclog',methods=['POST','GET']) 
 def doclog():
     if 'username' in session:
@@ -88,7 +108,7 @@ def docreg():
         return 'That username already exists!'
 
     return render_template('docreg.html')
-
+'''
             
 
 
@@ -104,3 +124,4 @@ def docreg():
 
 if __name__=='__main__':
     app.run(debug=True)
+    app.secret_key = 'your secret key'
