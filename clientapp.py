@@ -5,6 +5,7 @@ import bcrypt
 import re
 app=Flask(__name__,template_folder='templates')
 
+app.secret_key = "super secret key"
 app.config['MYSQL_HOST']='localhost'
 app.config['MYSQL_USER']='root'
 app.config['MYSQL_PASSWORD']=''
@@ -15,26 +16,58 @@ mysql=MySQL(app)
 @app.route('/')
 def index():
     return render_template('index.html') 
+@app.route('/main')
+def main():
+    return render_template('main.html')
 
 @app.route('/userlog',methods=["GET","POST"])
 def userlogin():
     msg = ''
-    if request.method == 'post':
+    # Check if "username" and "password" POST requests exist (user submitted form)
+    if request.method == 'POST' and 'user_email' in request.form and 'user_psw' in request.form:
+        # Create variables for easy access
         useremail = request.form['user_email']
         userpassword = request.form['user_psw']
+        # Check if account exists using MySQL
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM patients WHERE pemail = % s AND ppassword = % s', (useremail, userpassword, ))
-        paccount = cursor.fetchone()
-        if paccount:
+        cursor.execute('SELECT * FROM patients WHERE pemail = %s AND ppassword = %s', (useremail, userpassword))
+        # Fetch one record and return result
+        patient= cursor.fetchone()
+                # If account exists in patients table in out database
+        if patient:
+            # Create session data, we can access this data in other routes
             session['loggedin'] = True
-            
-            session['useremail'] = paccount['pemail']
-            msg = 'Logged in successfully !'
-            return render_template('main.html', msg = msg)
+            session['user_psw'] = patient['ppassword']
+            session['user_email'] = patient['pemail']
+            # Redirect to home page
+            return redirect(url_for('main'))
         else:
-            msg = 'Incorrect username / password !'
-    return render_template('userlog.html', msg = msg)
+            # Account doesnt exist or username/password incorrect
+            msg = 'Incorrect username/password!'
+    return render_template('userlog.html', msg='')
+   
+   
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
 @app.route('/userreg',methods=["GET","POST"])
 def userregistration():
     msg=''
@@ -123,5 +156,10 @@ def docreg():
 
 
 if __name__=='__main__':
-    app.run(debug=True)
-    app.secret_key = 'your secret key'
+   
+   
+
+   
+
+    app.debug = True
+    app.run()
