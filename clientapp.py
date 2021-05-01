@@ -18,56 +18,56 @@ def index():
 
 @app.route('/userlog',methods=["GET","POST"])
 def userlogin():
-    message = 'Please login to your account'
-    if "username" in session:
-        return redirect(url_for("main"))
-    if request.method == "POST":
-        username= request.form.get("user_uname")
-        password = request.form.get("user_psw")
-        cursor=mysql.connection.cursor()
-        username_found = cursor.execute(''' SELECT * FROM patients WHERE pname="username" ''')
-        if username_found:
-            username_val = username_found['username']
-            passwordcheck = username_found['password']
-            if bcrypt.checkpw(password.encode('utf-8'), passwordcheck):
-                session["username"] = username_val
-                return redirect(url_for('main'))
-            else:
-                if "username" in session:
-                    return redirect(url_for("main"))
-                message = 'Wrong password'
-                return render_template('userlog.html', message=message)
+    msg = ''
+    if request.method == 'post':
+        useremail = request.form['user_email']
+        userpassword = request.form['user_psw']
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM patients WHERE pemail = % s AND ppassword = % s', (useremail, userpassword, ))
+        paccount = cursor.fetchone()
+        if paccount:
+            session['loggedin'] = True
+            
+            session['useremail'] = paccount['pemail']
+            msg = 'Logged in successfully !'
+            return render_template('main.html', msg = msg)
         else:
-            message = 'Email not found'
-            return render_template('userlog.html', message=message)
-    return render_template('userlog.html', message=message)
+            msg = 'Incorrect username / password !'
+    return render_template('userlog.html', msg = msg)
 
 @app.route('/userreg',methods=["GET","POST"])
 def userregistration():
-    msg = ''
-    if request.method == 'POST' and 'username' in request.form and 'userpassword' in request.form and 'useremail' in request.form :
+    msg=''
+    if request.method == 'POST':
         username = request.form['user_name']
-        userpassword = request.form['user_psw']
         useremail = request.form['user_email']
-        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('''SELECT pemail FROM patients WHERE pemail = % s''', (useremail))
-        paccount = cursor.fetchone()
-        if paccount:
-            msg = 'Account already exists !'
-        elif not re.match(r'[^@]+@[^@]+\.[^@]+', useremail):
-            msg = 'Invalid email address !'
-        elif not re.match(r'[A-Za-z0-9]+', username):
-            msg = 'Username must contain only characters and numbers !'
-        elif not username or not userpassword or not useremail:
-            msg = 'Please fill out the form !'
+        userpassword=request.form['user_psw']
+        cursor = mysql.connection.cursor()
+        exists=cursor.execute('''SELECT pemail FROM patients WHERE pemail = % s''', (useremail,))
+        if exists:
+            msg="Sorry mail id already exists ..."
         else:
-            cursor.execute('''INSERT INTO patients VALUES ( % s, % s, % s)''', (username,  useremail, userpassword))
+            cursor.execute(''' INSERT INTO patients VALUES(%s,%s,%s)''',(username,useremail,userpassword))
             mysql.connection.commit()
             cursor.close()
-            msg = 'You have successfully registered !'
-    elif request.method == 'POST':
-        msg = 'Please fill out the form !'
-    return render_template('userreg.html', msg = msg)
+            msg="Successfully registered !"
+    return render_template('userreg.html',msg = msg)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
 '''
 @app.route('/doclog',methods=['POST','GET']) 

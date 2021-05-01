@@ -21,13 +21,13 @@
     <label for="psw"><b><font color="white">Password</font></b></label>
     <input type="password" placeholder="Enter Password" name="user_psw" required>
     <div class="msg">{{ msg }}</div>
-    <button type="submit"><font color="black"><b>Register</b></font></button>
+   <input type="submit" value="signup"> 
   
   </div>
 
   <div class="container" style="background-color:#566b25">
-   <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
+   <button type="button" class="cancelbtn"><a href="{{url_for('userlogin')}}">Cancel</a></button>
+   
 
   </div>
 </form>

@@ -12,12 +12,12 @@
 
 
   <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="user_name" required>
+    <label for="uname"><b>User Email</b></label>
+    <input type="text" placeholder="Enter User email" name="user_email" required>
 
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="user_psw" required>
-        
+    <div class="msg">{{ msg }}</div>  
     <button type="submit">Login</button>
     <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
@@ -25,7 +25,7 @@
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
+    <button type="button" class="cancelbtn"><a href="{{url_for('index')}}">Cancel</a></button>
     <span class="psw">Forgot <a href="#">password?</a></span>
   </div> 
 </form>
