@@ -4,11 +4,14 @@
 <link rel="stylesheet" type=text/css href="{{url_for('static',filename='profile.css')}}">
 </head>
 <body>
+  <div>
+    <div class="head-title"  id="symp">User Information</div>
+    <div class="head-title" id="back"><a href="/main">Back</a></div>
+  </div>
 <section class="page"> 
 <form action="/userprofile" method="POST">
   <div class="container">
-    <center><h1>User Information</h1></center>
-        <hr>
+    
 
     <label for="name"><b>Name</b></label>
     <input type="text" placeholder="Enter Name" name="pro_name" id="email" required>

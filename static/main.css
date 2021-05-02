@@ -1,23 +1,15 @@
 body{
-    
-    background-image: url("/images/mainbg.jpg");
-    background-position: cover;
+    background-image: url("{{url_for('static', filename='images/mainbg.jpg')}}");
+    background-size: 1550px 900px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
 .page{
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 20px;
-background-color: rgb(182, 246, 255);
-color:rgb(138, 123, 63);
-border: black medium solid;
-text-align: center;
-height: 2.5em;
-text-shadow: lightyellow;
-
-}
-#logout{
     
-margin-left:1350px;
+    font-size:25px;
+    background-color: rgb(182, 246, 255);
+    color:rgb(40, 48, 82);
+    border: black medium solid;
+     text-align: center;
 }
 .logout{
     border-radius: 10px;
@@ -25,7 +17,6 @@ margin-left:1350px;
     border: none;
     color: white;
     padding: 15px 32px;
-     margin-left: 500px;
     text-align: right;
     text-decoration: none;
     font-size: 16px;
@@ -44,15 +35,16 @@ margin-left:1350px;
 
 .profile{
 border:darkorange medium solid;
-background-color: whitesmoke;
+background-color: rgb(197, 79, 79);
 padding: 50px 50px 50px 50px;
 margin:50px 1000px 50px 50px;
 text-align: center;
 }
 
+
 .notification{
     border:darkorange medium solid;
-    background-color:whitesmoke;
+    background-color:rgb(80, 150, 89);
     /*padding: 50px 50px 50px 200px;*/
     margin-left:50px;
     margin-right:1000px;
@@ -63,7 +55,7 @@ text-align: center;
     }
     .symptoms{
         border:darkorange medium solid;
-        background-color: whitesmoke;
+        background-color: rgb(211, 112, 137);
         padding: 50px 50px 50px 50px;
         margin:50px 1000px 0px 50px;
         text-align: center;
@@ -106,4 +98,11 @@ text-align: center;
     background-color:rgb(199, 108, 108);
     width:200px;
     height:60px;
+}
+.inline{
+    display: inline-flex;
+    margin-left: 20px;
+}
+#log{
+    margin-left: 1000px;
 }
