@@ -8,18 +8,24 @@
      <p><B>COVID-19 DETECTOR</B></p>
     </div>
     <div >
+      <div  class="inline">
+         <h3>{{user_name}}</h3>
+      </div>
+       <div class="inline">
         <button class="logout" id="logout"><a href={{ url_for('userlogout') }}>Logout</a></button>
+      </div>
+     
     </div>
      <div class="main">        
         <div class="profile">
         <a href="/userprofile"}><input type="button" class="my_button1" value="Profile"></a>
          </div>
          <div class="symptoms">
-            <a href="symptom.html"> <input type="button" class="my_button4" value="Symptoms"></a>
+            <a href="/symptoms"> <input type="button" class="my_button4" value="Symptoms"></a>
         </div>
 
      <div class="notification">
-        <a href="notify.html"><input type="button" class="my_button2" value="Notification"></a>
+        <a href="/usernotification"><input type="button" class="my_button2" value="Notification"></a>
      </div>
 
      </div>

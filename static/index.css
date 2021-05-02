@@ -1,6 +1,5 @@
 body{
-
-background-image: url('images/corona.jpg');
+    background-image: url("{{ url_for('static', filename='images/indexback.png') }}");
 background-size: 1550px 900px;
 font-family: Verdana, Geneva, Tahoma, sans-serif;
 

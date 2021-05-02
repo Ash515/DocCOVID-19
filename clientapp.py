@@ -121,16 +121,20 @@ def symptoms():
     if request.method == 'POST' and 'chest_pain' in request.form and 'breathe' in request.form and 'fatigue' in request.form and 'fever' in request.form and 'low_appetite' in request.form and 'muscle_pain' in request.form:
         Chestpain=request.form['chest_pain']
         Breathe=request.form['breathe']
-        Fatigue=request.form['pro_age']
+        Fatigue=request.form['fatigue']
         Fever=request.form['fever']
         Lowappetite=request.form['low_appetite']
         Musclepain=request.form['muscle_pain']
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('INSERT INTO profiles VALUES (%s, %s, %s,%s,%s,%s,%s)', (Chestpain,Breathe,Fatigue))
+        cursor.execute('INSERT INTO symptoms VALUES (%s, %s, %s,%s,%s,%s)', (Chestpain,Breathe,Fatigue,Fever,Lowappetite,Musclepain))
         mysql.connection.commit()
         return render_template('main.html')
     else:
-        return render_template('profile.html')
+        return render_template('symptom.html')
+
+@app.route('/usernotification')
+def usernotifications():
+    return render_template('usernotification.html')
 
 
 
