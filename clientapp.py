@@ -1,4 +1,5 @@
 from flask import Flask, render_template,url_for,redirect,flash, request, redirect,session
+from flask.wrappers import Response
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
 import bcrypt
@@ -24,7 +25,6 @@ def main():
         return render_template('main.html', useremail=session['user_email'])
     # User is not loggedin redirect to login page
      return redirect(url_for('userlogin'))
-
 
 @app.route('/userlog',methods=["GET","POST"])
 def userlogin():
@@ -98,6 +98,7 @@ def userforgot():
 
 @app.route('/userprofile',methods=['GET','POST'])
 def userprofile():
+
     if request.method == 'POST' and 'pro_name' in request.form and 'pro_email' in request.form and 'pro_age' in request.form and 'pro_dob' in request.form and 'pro_gender' in request.form and 'pro_bg' in request.form and 'pro_pnumber' in request.form and 'pro_address' in request.form:
         profilename=request.form['pro_name']
         profileemail=request.form['pro_email']
@@ -107,8 +108,29 @@ def userprofile():
         profilebg=request.form['pro_bg']
         profilepno=request.form['pro_pnumber']
         profileaddr=request.form['pro_address']
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('INSERT INTO profiles VALUES (%s, %s, %s,%s,%s,%s,%s,%s)', (profilename, profileemail, profileage,profiledob,profilegender,profilebg,profilepno,profileaddr))
+        mysql.connection.commit()
+        return render_template('main.html')
+    else:
+        return render_template('profile.html')
 
-    return 
+@app.route('/symptoms',methods=['GET','POST'])
+def symptoms():
+
+    if request.method == 'POST' and 'chest_pain' in request.form and 'breathe' in request.form and 'fatigue' in request.form and 'fever' in request.form and 'low_appetite' in request.form and 'muscle_pain' in request.form:
+        Chestpain=request.form['chest_pain']
+        Breathe=request.form['breathe']
+        Fatigue=request.form['pro_age']
+        Fever=request.form['fever']
+        Lowappetite=request.form['low_appetite']
+        Musclepain=request.form['muscle_pain']
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('INSERT INTO profiles VALUES (%s, %s, %s,%s,%s,%s,%s)', (Chestpain,Breathe,Fatigue))
+        mysql.connection.commit()
+        return render_template('main.html')
+    else:
+        return render_template('profile.html')
 
 
 
