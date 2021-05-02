@@ -10,6 +10,32 @@ body{
     border-radius: 10px;
     padding-left: 20px;
 }
+#logout{
+    
+    margin-left:1350px;
+    }
+    .logout{
+        border-radius: 10px;
+        background-color: #301480cb;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+         margin-left: 500px;
+        text-align: right;
+        text-decoration: none;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .logout:hover{
+        background-color: rgba(212, 212, 241, 0.788);
+        color: black;
+    }
+    .logout a{
+        text-decoration: none;
+        color:white;
+    }
 .notification li{
     background-color: rgb(125, 77, 170);
     list-style-type:none;

@@ -37,6 +37,10 @@ margin-left:1350px;
     background-color: rgba(212, 212, 241, 0.788);
     color: black;
 }
+.logout a{
+    text-decoration: none;
+    color:white;
+}
 
 .profile{
 border:darkorange medium solid;

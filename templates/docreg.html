@@ -10,7 +10,7 @@
 <div class="hea"><center><h3> Doctor Registration</h3></center>
 
 <div>
-  <form action="#">
+  <form action="/docreg" method="POST">
     <label for="name"> Name</label>
     <input type="text" id="name" name="doc_uname" placeholder="Username..">
 
@@ -21,8 +21,8 @@
     <input type="password" id="password" name="doc_psw" placeholder="type password">
     
     <label for="c_pass">confirm password</label>
-    <input type="text" id="c_pass" name="doc_conpass" >
- 
+    <input type="text" id="c_pass" name="doc_conpsw" >
+     <div class="msg">{{msg}}</div>
     <input type="submit" value="Register">
   </form>
 </div>
