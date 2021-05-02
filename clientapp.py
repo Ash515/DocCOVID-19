@@ -25,9 +25,6 @@ def main():
     # User is not loggedin redirect to login page
      return redirect(url_for('userlogin'))
 
-@app.route('/docmain')
-def docmain():
-    return render_template('docmain.html')
 
 @app.route('/userlog',methods=["GET","POST"])
 def userlogin():
@@ -99,6 +96,19 @@ def userlogout():
 def userforgot():
     return render_template('userpassword.html')
 
+@app.route('/userprofile',methods=['GET','POST'])
+def userprofile():
+    if request.method == 'POST' and 'pro_name' in request.form and 'pro_email' in request.form and 'pro_age' in request.form and 'pro_dob' in request.form and 'pro_gender' in request.form and 'pro_bg' in request.form and 'pro_pnumber' in request.form and 'pro_address' in request.form:
+        profilename=request.form['pro_name']
+        profileemail=request.form['pro_email']
+        profileage=request.form['pro_age']
+        profiledob=request.form['pro_dob']
+        profilegender=request.form['pro_gender']
+        profilebg=request.form['pro_bg']
+        profilepno=request.form['pro_pnumber']
+        profileaddr=request.form['pro_address']
+
+    return 
 
 
 
@@ -114,8 +124,14 @@ def userforgot():
 
 
 
-  
 
+@app.route('/docmain')
+def docmain():
+    if 'docloggedin' in session:
+        # User is loggedin show them the home page
+        return render_template('docmain.html', docemail=session['doc_email'])
+    # User is not loggedin redirect to login page
+    return redirect(url_for('doclogin'))
 
 @app.route('/doclog',methods=['POST','GET']) 
 def doclog():
@@ -133,7 +149,7 @@ def doclog():
                 # If account exists in patients table in out database
         if doctor:
             # Create session data, we can access this data in other routes
-            session['loggedin'] = True
+            session['docloggedin'] = True
             session['doc_psw'] = doctor['dpassword']
             session['doc_email'] = doctor['demail']
             # Redirect to home page
@@ -181,6 +197,12 @@ def doctorregistration():
         msg = 'Please fill out the form!'
     # Show registration form with message (if any)
     return render_template('docreg.html', msg=msg)
+
+@app.route('/doctorlogout', methods = ['GET'])
+def doctorlogout():
+    session.pop('doc_email')
+    return redirect(url_for('index'))
+
 
 if __name__=='__main__':
     app.debug = True

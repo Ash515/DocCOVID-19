@@ -5,32 +5,34 @@
 </head>
 <body>
 <section class="page"> 
-<form action="">
+<form action="/userprofile" method="POST">
   <div class="container">
     <center><h1>User Information</h1></center>
         <hr>
 
     <label for="name"><b>Name</b></label>
-    <input type="text" placeholder="Enter Name" name="name" id="email" required>
+    <input type="text" placeholder="Enter Name" name="pro_name" id="email" required>
+    <label for="name"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="pro_email" id="email" required>
 
     <label for="email"><b>Age</b></label>
-    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+    <input type="text" placeholder="Enter Age" name="pro_age" id="email" required>
     <label for="dob"><b>Date of Birth</b></label>
-    <input type="text" placeholder="D.O.B" name="dob" id="dob" required>
+    <input type="text" placeholder="D.O.B" name="pro_dob" id="dob" required>
     <label for="gender"><b>Gender</b></label>
-   <select id="genders">
+   <select id="genders" name="pro_gender">
        <option>Male</option>
        <option>Female</option>
        <option>Others</option>
    </select>
     <label for="bloodgroup"><b>Blood group</b></label>
-    <input type="bloodgroup" placeholder="Bloodgroup" name="bloodgroup" id="bloodgroup" required>
+    <input type="bloodgroup" placeholder="Bloodgroup" name="pro_bg" id="bloodgroup" required>
 
     <label for="phone number"><b>Phone Number</b></label>
-    <input type="number" placeholder="Phone number" name="pnumber" id="pnumber" required>
+    <input type="number" placeholder="Phone number" name="pro_pnumber" id="pnumber" required>
 
     <label for="address"><b>Address</b></label>
-    <input type="address" placeholder="Enter address" name="address" id="address" required>
+    <input type="address" placeholder="Enter address" name="pro_address" id="address" required>
 
     
     <hr>

@@ -13,6 +13,10 @@ body{
 #logout{
     
     margin-left:1350px;
+    width:200px;
+    height:50px;
+    background-color: indigo;
+    color:white;
     }
     .logout{
         border-radius: 10px;
