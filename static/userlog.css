@@ -1,11 +1,14 @@
 
-body {font-family: Arial, Helvetica, sans-serif;
-background-color:rgba(44, 31, 11, 0.74);}
+body {font-family:Georgia, 'Times New Roman', Times, serif;
+background-image:url("/static/images/userlogin.jpg");
+
+background-size: 1550px 900px;
+}
 form {border: 3px solid #f1f1f1;}
 
 input[type=text], input[type=password] {
   width: 100%;
-  padding: 12px 20px;
+  padding: 12px 20px; 
   margin: 8px 0;
   display: inline-block;
   border: 1px solid rgb(177, 75, 75);
@@ -44,6 +47,7 @@ img.avatar {
 
 .container {
   padding: 16px;
+  color:white;
 }
 
 span.psw {
@@ -62,21 +66,24 @@ span.psw {
   }
 }
 form{
-    margin-left: 400px;
-    margin-right: 400px;
+    margin-left: 800px;
+    margin-right: 100px;
     margin-top: 20px;
     margin-bottom: 50px;
 }
 .log{
-    margin-left:400px;
-    margin-right:400px;
+    margin-left:800px;
+    margin-right:100px;
     padding-top:10px;
     padding-bottom: 10px;
-    margin-top: 10px;
+    margin-top: 30px;
     display: block;
     text-align: center;
     background-color: maroon;
     color:white;
     padding-right: 0px 0px 20px 20px;
 }
-
+.container a{
+  text-decoration: none;
+  color:white;
+}

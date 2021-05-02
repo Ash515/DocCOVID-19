@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='docreg.css')}}">
-    <style>
-        body{
-  background-color: #403a94;
+<style>
+body{
+  background-image: url("/static/images/doclog.jpg");
+  background-size: 1550px 900px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;  
 }
-  h3{
-    color:white;
-  }
-.hea{
+
+.head{
 background-color: #ff00ea;
 color:black;
 margin: 20px 670px 200px 200px;
@@ -33,8 +33,6 @@ input[type=password], select {
   border-radius: 4px;
   box-sizing: border-box;
 }
-
-
 input[type=submit] {
   width: 100%;
   background-color: #4CAF50;
@@ -45,38 +43,53 @@ input[type=submit] {
   border-radius: 4px;
   cursor: pointer;
 }
-
 input[type=submit]:hover {
   background-color: #45a049;
 }
-
+input[type=button] {
+  width: 100%;
+  background-color: #af4c51;
+  color: white;
+  padding: 14px 10px ;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type=button]:hover {
+  background-color: #a04560be;
+}
 div {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
   margin: 0px 20px 20px 20px;
 }
-    </style>
-    
+a{
+  text-decoration: none;
+  color:white;
+}
+</style>
 </head>
-<body style="padding: 5px 250px 5px 20px; background-image: url('userpic.png');
-">
+<body style="padding: 5px 150px 5px 20px;">
 
-<div class="hea"><center><h3> Doctor Sign In</h3></center>
+<div class="head">
+  <center><h2><font color="white">Doctor Sign In</font></h2></center>
 
 <div>
   <form action="/doclog" method='POST'>
    
 
-    <label for="email">email</label>
+    <label for="email">Email</label>
     <input type="text" id="ename" name="doc_email" placeholder="honio@gmail.com">
     
     <label for="password">Password</label>
-    <input type="password" id="password" name="doc_psw" placeholder="type password">
+    <input type="password" id="password" name="doc_psw" placeholder="Type password">
     
    
  
     <input type="submit" value="Login">
+   <a href="{{url_for('index')}}"><input type="button" value="Cancel"></a>
   </form>
 </div>
 

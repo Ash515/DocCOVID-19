@@ -1,5 +1,6 @@
-body {font-family: Arial, Helvetica, sans-serif;
-    background-color:rgba(95, 137, 145, 0.753);
+body {font-family: Georgia, 'Times New Roman', Times, serif;
+    background-image: url("/static/images/userreg.jpg");
+    background-size: 1550px 900px;
 }
     form {border: 3px solid #f1f1f1;}
     
@@ -30,6 +31,10 @@ body {font-family: Arial, Helvetica, sans-serif;
       width: auto;
       padding: 10px 18px;
       background-color: #dd8e89;
+    }
+    .container a{
+      text-decoration: none;
+      color:white;
     }
     
     .imgcontainer {
@@ -62,23 +67,30 @@ body {font-family: Arial, Helvetica, sans-serif;
       }
     }
     form{
-        margin-left: 400px;
-        margin-right: 400px;
+        margin-left: 100px;
+        margin-right: 800px;
         margin-top: 20px;
         margin-bottom: 50px;
     }
     .log{
-        margin-left:400px;
-        margin-right:400px;
-        padding-top:10px;
+        margin-left:100px;
+       margin-right:800px;
+        padding-top:20px;
         padding-bottom: 10px;
-        margin-top: 10px;
+        margin-top: 30px;
         display: block;
         text-align: center;
-        background-color: rgb(253, 255, 123);
-        color:rgb(0, 0, 0);
+        background-color: rgb(39, 44, 71);
+        color:white;
         padding-right: 0px 0px 20px 20px;
     }
-    
+    #signup-btn{
+      width:100px;
+      height:30px;
+    margin-left: 230px;
+    cursor: pointer;
+    background-color: rgb(156, 81, 93);
+    color:white;
+    }
     
     

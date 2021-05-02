@@ -1,9 +1,7 @@
 body{
-    background-image: url("/static/images/index.jpg");
+    background-image: url("/static/images/indexbg.jpg");
 background-size: 1550px 900px;
 font-family: Verdana, Geneva, Tahoma, sans-serif;
-
-
 }
 .heading{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -59,7 +57,7 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 .user-login{
     display:inline-flex;
     
-    background-color:rgb(110, 19, 19);
+    background-color:rgba(59, 204, 78, 0.295);
     margin-left: 500px;
     margin-top: 30px;
     padding-left: 20px;
@@ -80,12 +78,9 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .main{
     display: inline-flex;
-  
-
 }
 .main-abt{
     display: inline-flex;
-  
 }
 #doc-signin-but{
     background-color: violet;
@@ -98,7 +93,6 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 #doc-signin-but:hover{
     background-color:rgba(238, 130, 238, 0.534) ;
 }
-
 #pat-signin-but{
     background-color: rgb(66, 224, 127);
     width: 100px;
