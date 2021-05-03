@@ -12,11 +12,12 @@ body{
 }
 #logout{
     
-    margin-left:1350px;
+    margin-left:1150px;
     width:200px;
     height:50px;
     background-color: indigo;
     color:white;
+    padding-right: 70px;
     }
     .logout{
         border-radius: 10px;

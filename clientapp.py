@@ -136,6 +136,9 @@ def symptoms():
 def usernotifications():
     return render_template('usernotification.html')
 
+@app.route('/notifications')
+def notifications():
+    return render_template('notifications.html')
 
 
 
@@ -178,7 +181,7 @@ def doclog():
             # Create session data, we can access this data in other routes
             session['docloggedin'] = True
             session['doc_psw'] = doctor['dpassword']
-            session['doc_email'] = doctor['demail']
+            session['doc_email'] = doctor['dmail']
             # Redirect to home page
             return redirect(url_for('docmain'))
         else:
