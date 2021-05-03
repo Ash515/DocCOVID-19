@@ -57,7 +57,7 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 .user-login{
     display:inline-flex;
     
-    background-color:rgba(39, 204, 61, 0.726);
+    background-color:rgba(167, 53, 87, 0.726);
     margin-left: 500px;
     margin-top: 30px;
     padding-left: 20px;
@@ -83,7 +83,7 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: inline-flex;
 }
 #doc-signin-but{
-    background-color: violet;
+    background-color: rgb(15, 6, 15);
     width: 100px;
     height:30px;
     padding-left: 20px;
@@ -94,7 +94,7 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color:rgba(238, 130, 238, 0.534) ;
 }
 #pat-signin-but{
-    background-color: rgb(66, 224, 127);
+    background-color: rgb(22, 58, 36);
     width: 100px;
     height:30px;
     padding-left: 20px;

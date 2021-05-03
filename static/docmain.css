@@ -3,19 +3,20 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .main{
-    background-color: orangered;
+    background-color: rgb(40, 78, 72);
     color:white;
     width:1480px;
     height:60px;
     border-radius: 10px;
-    padding-left: 20px;
+    padding-left: 30px;
+    padding-top: 10px;
 }
 #logout{
     
     margin-left:1150px;
     width:200px;
     height:50px;
-    background-color: indigo;
+    background-color: rgb(40, 78, 72);
     color:white;
     padding-right: 70px;
     }

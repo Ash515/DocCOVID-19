@@ -6,29 +6,42 @@
     </head>
     <body>
         <div class="main">
-            <div class="window">
-                
-            <h2>Message </h2>
-            <h3>Symptoms</h3>
-            <ul>
-                <li><h3></h3></li>
-                
-                
-            </ul>
-            <div class="profile">
-            <h3>Details</h3>
-            <h4>Name:</h4>
-            <h4>Blood group:</h4>
-            <h4>Age:</h4>
+         <h1>Message </h1>
+         <h2>Profile Information</h2>
+         <div class="profile">
+            1.Name :   <br><br>
+            2.Email:   <br><br>
+            3.Age  :   <br><br>
+            4.DOB : <br><br>
+            5.Gender :   <br><br>
+            6.Bloodgroup :  <br><br>
+            7.Phone Number :  <br><br>
+            8.Address :  <br>
         </div>
-        <form action="" class="filehandler">
-            <input type="file" id="myFile" name="filename">
-            <input type="submit">
-          </form>
+        <h2>Symptoms</h2>
+          <div class="symptoms">
+              1.Chest Pain :   <br><br>
+              2.Difficulty/Shortness of Breath :   <br><br>
+              3. Fatigue :   <br><br>
+              4.Fever :    <br><br>
+              5.Low Appetite :   <br><br>
+              6.Muscle Pain  <br><br>
+          </div>
+
+
+            <form action="" class="filehandler">
+                <input type="file" class="myFile" name="filename">
+                <input type="submit" id="submit">
+              </form>
+        </div>
+        <div class="cancel">
+            <a href="{{url_for('docmain')}}"><input type="button" value="Cancel"></a>
+        </div>
+       
 
            
 
-            </div>
-        </div>
+           
+       
     </body>
 </html>
