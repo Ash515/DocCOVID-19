@@ -1,3 +1,4 @@
+from MySQLdb import connections
 from flask import Flask, render_template,url_for,redirect,flash, request, redirect,session
 from flask.wrappers import Response
 from flask_mysqldb import MySQL
@@ -159,8 +160,22 @@ def docmain():
     if 'docloggedin' in session:
         # User is loggedin show them the home page
         return render_template('docmain.html', docemail=session['doc_email'])
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute('SELECT * FROM doctors') 
+    data = cursor.fetchall() #data from database 
+    return render_template("notifications.html", value=data)
+
+    
     # User is not loggedin redirect to login page
-    return redirect(url_for('doclogin'))
+    #return redirect(url_for('doclogin'))
+
+def example(): 
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute('SELECT * FROM doctors') 
+    data = cursor.fetchall() #data from database 
+    return render_template("notifications.html", value=data)
+
+
 
 @app.route('/doclog',methods=['POST','GET']) 
 def doclog():
