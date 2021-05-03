@@ -1,15 +1,16 @@
 body{
-    background-image: url("{{url_for('static', filename='images/mainbg.jpg')}}");
+    background-image: url("/static/images/mainbg.jpg");
     background-size: 1550px 900px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .page{
     
     font-size:25px;
-    background-color: rgb(182, 246, 255);
-    color:rgb(40, 48, 82);
+    background-color: rgba(24, 51, 54, 0.507);
+    color:white;
     border: black medium solid;
      text-align: center;
+     
 }
 .logout{
     border-radius: 10px;
@@ -33,72 +34,6 @@ body{
     color:white;
 }
 
-.profile{
-border:darkorange medium solid;
-background-color: rgb(197, 79, 79);
-padding: 50px 50px 50px 50px;
-margin:50px 1000px 50px 50px;
-text-align: center;
-}
-
-
-.notification{
-    border:darkorange medium solid;
-    background-color:rgb(80, 150, 89);
-    /*padding: 50px 50px 50px 200px;*/
-    margin-left:50px;
-    margin-right:1000px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    /*margin:50px 300px 50px 750px;*/
-    text-align: center;
-    }
-    .symptoms{
-        border:darkorange medium solid;
-        background-color: rgb(211, 112, 137);
-        padding: 50px 50px 50px 50px;
-        margin:50px 1000px 0px 50px;
-        text-align: center;
-        margin-bottom: 20px;
-        }
-    
-.message{
-    border:darkorange medium solid;
-    background-color: whitesmoke;
-    padding: 50px 50px 50px 50px;
-    margin:50px 1000px 0px 50px;
-    text-align: center;
-    }
-.my_button1{
-    cursor: pointer;
-    width:200px;
-    background-color: mediumslateblue;
-    color:white;
-    height:60px;
-}
-
-.my_button2{
-    color:white;
-    cursor: pointer;
-    width:200px;
-    margin-left:10px;
-    background-color: rgba(60, 179, 114, 0.781);
-    height:60px;
-}
-.my_button3{
-    color:black;
-    cursor: pointer;
-    background-color:yellow;
-    width:200px;
-    height:60px;
-}
-.my_button4{
-    color:rgb(228, 253, 247);
-    cursor: pointer;
-    background-color:rgb(199, 108, 108);
-    width:200px;
-    height:60px;
-}
 .inline{
     display: inline-flex;
     margin-left: 20px;
@@ -106,3 +41,61 @@ text-align: center;
 #log{
     margin-left: 1000px;
 }
+.profile{
+    display: inline-flex;
+    margin-left: 20px;
+}
+.hosp-btn{
+    text-align: center;
+    background-color: indigo;
+    width: 500px;
+    height: 60px;
+    margin-left: 500px;
+    color: white;
+    padding-top: 2px;
+    cursor: pointer;
+}
+.hosp-list{
+    background-color: white;
+    width: 500px;
+    height:500px;
+    margin-left: 500px;
+    margin-top: 10px;
+}
+li{
+    list-style-type: none;
+    height: 30px;
+}
+#hosp1{
+    background-color: rgba(0, 128, 0, 0.637);
+    
+}
+
+#hosp-table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #hosp-table td, #hosp-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  #hosp-table tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #hosp-table tr:hover {background-color: #ddd;}
+  
+  #hosp-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+  a{
+      text-decoration: none;
+      color:rgb(214, 39, 39);
+  }
+  #user h3{
+      color: white;
+  }

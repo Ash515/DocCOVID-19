@@ -161,15 +161,16 @@ def docmain():
 
 @app.route('/doclog',methods=['POST','GET']) 
 def doclog():
-    msg = ''
+   
     # Check if "username" and "password" POST requests exist (user submitted form)
+    message=""
     if request.method == 'POST' and 'doc_email' in request.form and 'doc_psw' in request.form:
         # Create variables for easy access
         docemail = request.form['doc_email']
         docpassword = request.form['doc_psw']
         # Check if account exists using MySQL
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM doctors WHERE demail = %s AND dpassword = %s', (docemail, docpassword))
+        cursor.execute('SELECT * FROM doctors WHERE dmail = %s AND dpassword = %s', (docemail, docpassword))
         # Fetch one record and return result
         doctor= cursor.fetchone()
                 # If account exists in patients table in out database
@@ -182,23 +183,24 @@ def doclog():
             return redirect(url_for('docmain'))
         else:
             # Account doesnt exist or username/password incorrect
-            msg = 'Incorrect username/password!'
-    return render_template('doclog.html', msg='')
+            message = 'Incorrect username/password!'
+    return render_template('doclog.html', message='')
 
 @app.route('/docreg',methods=["GET","POST"])
 def doctorregistration():
     msg = ''
     # Check if "username", "password" and "email" POST requests exist (user submitted form)
-    if request.method == 'POST' and 'doc_uname' in request.form and 'doc_email' in request.form and 'doc_psw' in request.form and 'doc_conpsw' in request.form:
+    if request.method == 'POST' and 'doc_uname' in request.form and 'doc_email' in request.form and 'hosp_name' in request.form  and 'doc_psw' in request.form and 'doc_conpsw' in request.form:
         # Create variables for easy access
         docname = request.form['doc_uname']
         docemail = request.form['doc_email']
+        dochospital= request.form['hosp_name']
         docpassword = request.form['doc_psw']
         docconpassword = request.form['doc_conpsw']
      
         # Check if account exists using MySQL
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM doctors WHERE demail = %s', (docemail,))
+        cursor.execute('SELECT * FROM doctors WHERE dhospital = %s', (dochospital,))
         account = cursor.fetchone()
         # If account exists show error and validation checks
         if account:
@@ -209,11 +211,11 @@ def doctorregistration():
             msg = 'Username must contain only characters and numbers!'
         elif docpassword!=docconpassword:
             msg="Password mismatch with confirm password"
-        elif not docname or not docpassword or not docemail:
+        elif not docname or not docpassword or not docemail or not dochospital:
             msg = 'Please fill out the form!'
         else:
             # Account doesnt exists and the form data is valid, now insert new account into accounts table
-            cursor.execute('INSERT INTO doctors VALUES (%s, %s, %s)', (docname, docemail, docpassword))
+            cursor.execute('INSERT INTO doctors VALUES (%s, %s, %s,%s)', (docname, docemail,dochospital, docpassword))
             mysql.connection.commit()
             msg = 'You have successfully registered!'
             #after successfully inserted redirect to loginpage

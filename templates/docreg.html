@@ -4,26 +4,29 @@
     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='docreg.css')}}">
     
 </head>
-<body style="padding: 5px 250px 5px 20px; background-image: url('userpic.png');
+<body style="padding: 5px 100px 20px 20px;
 ">
+ 
+<div class="head"><center><h3> Doctor's Registration</h3></center>
 
-<div class="hea"><center><h3> Doctor Registration</h3></center>
-
-<div>
+<div class="main">
   <form action="/docreg" method="POST">
     <label for="name"> Name</label>
-    <input type="text" id="name" name="doc_uname" placeholder="Username..">
+    <input type="text" id="name" name="doc_uname" placeholder="Username.." required>
 
-    <label for="email">email</label>
-    <input type="text" id="ename" name="doc_email" placeholder="honio@gmail.com">
+    <label for="email">Email</label>
+    <input type="text" id="ename" name="doc_email" placeholder="honio@gmail.com" required>
+    <label for="email">Hospital Name</label>
+    <input type="text" id="ename" name="hosp_name" placeholder="Type Your Hospital Name">
     
     <label for="password">Password</label>
-    <input type="password" id="password" name="doc_psw" placeholder="type password">
+    <input type="password" id="password" name="doc_psw" placeholder="type password" required>
     
-    <label for="c_pass">confirm password</label>
-    <input type="text" id="c_pass" name="doc_conpsw" >
-     <div class="msg">{{msg}}</div>
+    <label for="c_pass">Confirm password</label>
+    <input type="text" id="c_pass" name="doc_conpsw" required >
+     {{msg}}
     <input type="submit" value="Register">
+    <a href="{{url_for('index')}}"><input type="button" value="Cancel"></a>
   </form>
 </div>
 

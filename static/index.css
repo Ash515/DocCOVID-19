@@ -1,5 +1,5 @@
 body{
-    background-image: url("/static/images/indexbg.jpg");
+    background-image: url("/static/images/mainbg.jpg");
 background-size: 1550px 900px;
 font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -57,7 +57,7 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 .user-login{
     display:inline-flex;
     
-    background-color:rgba(59, 204, 78, 0.295);
+    background-color:rgba(39, 204, 61, 0.726);
     margin-left: 500px;
     margin-top: 30px;
     padding-left: 20px;

@@ -1,10 +1,13 @@
 body{
-  background-color: #45a049;
+  background-image: url("/static/images/docreg.jpg");
+  background-size: 1550px 1100px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
   h3{
     color:white;
   }
-.hea{
+ 
+.head{
 background-color: #ff00ea;
 color:black;
 margin: 20px 670px 200px 200px;
@@ -43,6 +46,20 @@ input[type=submit] {
 
 input[type=submit]:hover {
   background-color: #45a049;
+}
+input[type=button] {
+  width: 100%;
+  background-color: #a13153;
+  color: white;
+  padding: 14px 10px ;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=button]:hover {
+  background-color: #a0455c8a;
 }
 
 div {
