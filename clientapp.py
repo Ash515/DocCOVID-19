@@ -23,7 +23,11 @@ def index():
 def main():
      if 'loggedin' in session:
         # User is loggedin show them the home page
-        return render_template('main.html', useremail=session['user_email'])
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM doctors')
+        # Fetch one record and return result
+        docdata= cursor.fetchall()
+        return render_template('main.html', useremail=session['user_email'],docdata=docdata)
     # User is not loggedin redirect to login page
      return redirect(url_for('userlogin'))
 
@@ -150,7 +154,10 @@ def notifications():
 
 @app.route('/hospitals')
 def hospitals():
-    return render_template('hospitalmain.html')
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute('SELECT * FROM doctors')
+    hospdata = cursor.fetchall() #data from database
+    return render_template('hospitalmain.html',hospdata=hospdata)
 
  
 

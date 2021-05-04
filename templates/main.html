@@ -23,48 +23,17 @@
           <h3>Hospitals</h3>
    </div>
    <div class="hosp-list">
+    <div class="hosp-head"> <div class="hosp-inline" id="hosplist" ><h3>Hospital</h3></div></div>
+     <ul>
+        {% for row in docdata %}
+        <li>
+           <div><a href="/hospitals">{{row.dhospital}}</a> </div>
+        </li>
+        {% endfor %}
+     </ul>
      
-            <table id="hosp-table"><tr>
-           <th>Hospital Name</th>
-           <th>Link</th>
-           </tr>
-           <tr>
-            <td>Ramachandra Hospitals, Chennai</td>
-            <td><a href="/hospitals">Click Here</a></td>
-        </tr>
-        <tr>
-         <td>Saveetha Hospitals, Chennai</td>
-         <td><a href="#">Click Here</a></td>
-     </tr>
-     <tr>
-      <td>SRM Hospitals, Chennai</td>
-      <td><a href="#">Click Here</a></td>
-  </tr>
-  <tr>
-   <td>Miot Hospitals, Chennai</td>
-   <td><a href="#">Click Here</a></td>
-</tr>
-<tr>
-<td> Apollo Hospitals, Chennai</td>
-<td><a href="#">Click Here</a></td>
-</tr>
-<tr>
-<td>Dr.Kamatchi Memorial Hospital, Chennai</td>
-<td><a href="#">Click Here</a></td>
-</tr>
-<tr>
-<td> Dr Mehta's Hospitals, Chennai</td>
-<td><a href="#">Click Here</a></td>
-</tr>
-<tr>
-<td>Fortis Malar Hospitals, Chennai</td>
-<td><a href="#">Click Here</a></td>
-</tr>
-<tr>
-<td>Frontier Lifeline Hospital, Chennai</td>
-<td><a href="#">Click Here</a></td>
-</tr>
-</table>
+        
+            
            
 
 </div>

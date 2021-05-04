@@ -116,3 +116,16 @@ li{
   #user h3{
       color: white;
   }
+  .hosp-inline{
+      display: inline-flex;
+      
+  }
+  #link{
+      margin-left: 200px;
+  }
+  #hosplist{
+    margin-left: 200px; 
+}
+.hosp-head{
+      background-color: #4CAF50;
+  }
