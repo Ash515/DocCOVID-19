@@ -38,9 +38,26 @@ body{
     display: inline-flex;
     margin-left: 20px;
 }
-#log{
-    margin-left: 1000px;
+.inline a{
+    text-decoration: none;
+    color:white;
 }
+#log{
+    margin-left:700px;
+}
+#notify{
+    background-color: red;
+    width:100px;
+    height:30px;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+#notify:hover{
+    background-color: green;
+}
+
+
 .profile{
     display: inline-flex;
     margin-left: 20px;
@@ -75,7 +92,7 @@ li{
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
-  }
+}
   
   #hosp-table td, #hosp-table th {
     border: 1px solid #ddd;

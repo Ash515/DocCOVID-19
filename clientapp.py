@@ -112,7 +112,7 @@ def userprofile():
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('INSERT INTO profiles VALUES (%s, %s, %s,%s,%s,%s,%s,%s)', (profilename, profileemail, profileage,profiledob,profilegender,profilebg,profilepno,profileaddr))
         mysql.connection.commit()
-        return render_template('main.html')
+        return redirect(url_for('hospitals'))
     else:
         return render_template('profile.html')
 
@@ -129,7 +129,7 @@ def symptoms():
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('INSERT INTO symptoms VALUES (%s, %s, %s,%s,%s,%s)', (Chestpain,Breathe,Fatigue,Fever,Lowappetite,Musclepain))
         mysql.connection.commit()
-        return render_template('main.html')
+        return redirect(url_for('hospitals'))
     else:
         return render_template('symptom.html')
 
@@ -149,7 +149,7 @@ def notifications():
     return render_template("notifications.html", value=data,val=symdata)
 
 @app.route('/hospitals')
-def hopitals():
+def hospitals():
     return render_template('hospitalmain.html')
 
  

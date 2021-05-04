@@ -11,6 +11,10 @@
       <div  class="inline" id="user">
          <h3>{{session.user_email}} !</h3>
       </div>
+      <div class="inline" id="notify" >
+         <a href="/usernotification">Notification</a>
+      </div>
+         
        <div class="inline" id="log">
         <button class="logout" id="logout"><a href={{ url_for('userlogout') }}>Logout</a></button>
       </div>
@@ -19,61 +23,52 @@
           <h3>Hospitals</h3>
    </div>
    <div class="hosp-list">
-      <table id="hosp-table">
-         <tr>
+     
+            <table id="hosp-table"><tr>
            <th>Hospital Name</th>
            <th>Link</th>
            </tr>
            <tr>
-               <td>Ramachandra Hospitals, Chennai</td>
-               <td><a href="/hospitals">Click Here</a></td>
-           </tr>
-           <tr>
-            <td>Saveetha Hospitals, Chennai</td>
-            <td><a href="#">Click Here</a></td>
+            <td>Ramachandra Hospitals, Chennai</td>
+            <td><a href="/hospitals">Click Here</a></td>
         </tr>
         <tr>
-         <td>SRM Hospitals, Chennai</td>
+         <td>Saveetha Hospitals, Chennai</td>
          <td><a href="#">Click Here</a></td>
      </tr>
      <tr>
-      <td>Miot Hospitals, Chennai</td>
+      <td>SRM Hospitals, Chennai</td>
       <td><a href="#">Click Here</a></td>
   </tr>
   <tr>
-   <td> Apollo Hospitals, Chennai</td>
+   <td>Miot Hospitals, Chennai</td>
    <td><a href="#">Click Here</a></td>
 </tr>
 <tr>
-   <td>Dr.Kamatchi Memorial Hospital, Chennai</td>
-   <td><a href="#">Click Here</a></td>
+<td> Apollo Hospitals, Chennai</td>
+<td><a href="#">Click Here</a></td>
 </tr>
 <tr>
-   <td> Dr Mehta's Hospitals, Chennai</td>
-   <td><a href="#">Click Here</a></td>
+<td>Dr.Kamatchi Memorial Hospital, Chennai</td>
+<td><a href="#">Click Here</a></td>
 </tr>
 <tr>
-   <td>Fortis Malar Hospitals, Chennai</td>
-   <td><a href="#">Click Here</a></td>
+<td> Dr Mehta's Hospitals, Chennai</td>
+<td><a href="#">Click Here</a></td>
 </tr>
 <tr>
-   <td>Frontier Lifeline Hospital, Chennai</td>
-   <td><a href="#">Click Here</a></td>
+<td>Fortis Malar Hospitals, Chennai</td>
+<td><a href="#">Click Here</a></td>
+</tr>
+<tr>
+<td>Frontier Lifeline Hospital, Chennai</td>
+<td><a href="#">Click Here</a></td>
 </tr>
 </table>
-</div>
-<div>        
-        <div class="profile" >
-        <a href="/userprofile"}>Profile</a>
-         </div>
-         <div class="profile" >
-            <a href="/symptoms"> <input type="button" class="my_button4" value="Symptoms"></a>
-        </div>
+           
 
-     <div class="profile" >
-        <a href="/usernotification"><input type="button" class="my_button2" value="Notification"></a>
-     </div>
-   </div>
+</div>
+
      
     
 
