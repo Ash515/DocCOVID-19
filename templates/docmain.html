@@ -16,11 +16,12 @@
         </div>
              <div class="notification">
                 <ul>
+                    {% for row in patientnotify %}
                     <li>
-                        <a href="/notifications"><div class="notify-container">Ashwin Kumar &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.30PM</div></a>
+                        <a href="/notifications"><div class="notify-container">{{ row.name }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; {{ row.prodate }}</div></a>
                     </li><br>
                     
-                   
+                   {% endfor %}
                 </ul>
              </div>
         

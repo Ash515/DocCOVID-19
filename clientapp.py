@@ -104,7 +104,7 @@ def userforgot():
 @app.route('/userprofile',methods=['GET','POST'])
 def userprofile():
 
-    if request.method == 'POST' and 'pro_name' in request.form and 'pro_email' in request.form and 'pro_age' in request.form and 'pro_dob' in request.form and 'pro_gender' in request.form and 'pro_bg' in request.form and 'pro_pnumber' in request.form and 'pro_address' in request.form:
+    if request.method == 'POST':
         profilename=request.form['pro_name']
         profileemail=request.form['pro_email']
         profileage=request.form['pro_age']
@@ -113,29 +113,20 @@ def userprofile():
         profilebg=request.form['pro_bg']
         profilepno=request.form['pro_pnumber']
         profileaddr=request.form['pro_address']
-        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('INSERT INTO profiles VALUES (%s, %s, %s,%s,%s,%s,%s,%s)', (profilename, profileemail, profileage,profiledob,profilegender,profilebg,profilepno,profileaddr))
-        mysql.connection.commit()
-        return redirect(url_for('hospitals'))
-    else:
-        return render_template('profile.html')
-
-@app.route('/symptoms',methods=['GET','POST'])
-def symptoms():
-
-    if request.method == 'POST' and 'chest_pain' in request.form and 'breathe' in request.form and 'fatigue' in request.form and 'fever' in request.form and 'low_appetite' in request.form and 'muscle_pain' in request.form:
         Chestpain=request.form['chest_pain']
         Breathe=request.form['breathe']
         Fatigue=request.form['fatigue']
         Fever=request.form['fever']
         Lowappetite=request.form['low_appetite']
         Musclepain=request.form['muscle_pain']
+        profiledate=request.form['pro_date']
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('INSERT INTO symptoms VALUES (%s, %s, %s,%s,%s,%s)', (Chestpain,Breathe,Fatigue,Fever,Lowappetite,Musclepain))
+        cursor.execute('INSERT INTO profiles VALUES (%s, %s, %s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', (profilename, profileemail, profileage,profiledob,profilegender,profilebg,profilepno,profileaddr,Chestpain,Breathe,Fatigue,Fever,Lowappetite,Musclepain,profiledate))
         mysql.connection.commit()
-        return redirect(url_for('hospitals'))
+        return redirect(url_for('main'))
     else:
-        return render_template('symptom.html')
+        return render_template('profile.html')
+
 
 @app.route('/usernotification')
 def usernotifications():
@@ -168,11 +159,11 @@ def notifications():
 def docmain():
     if 'docloggedin' in session:
         # User is loggedin show them the home page
-      #  cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-       # cursor.execute('SELECT * FROM doctors WHERE dmail = %s AND dpassword = %s', (docemail, docpassword))
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM profiles')
         # Fetch one record and return result
-        #patientnotify= cursor.fetchone()
-        return render_template('docmain.html', docemail=session['doc_email'])
+        patientnotify= cursor.fetchall()
+        return render_template('docmain.html', docemail=session['doc_email'],patientnotify=patientnotify)
     # User is not loggedin redirect to login page
     return redirect(url_for('doclogin'))
 
@@ -213,6 +204,7 @@ def doctorregistration():
         docemail = request.form['doc_email']
         dochospital= request.form['hosp_name']
         dochospitaladdress= request.form['hosp_addr']
+        dochospitalweb= request.form['hosp_web']
         docpassword = request.form['doc_psw']
         docconpassword = request.form['doc_conpsw']
      
@@ -233,7 +225,7 @@ def doctorregistration():
             msg = 'Please fill out the form!'
         else:
             # Account doesnt exists and the form data is valid, now insert new account into accounts table
-            cursor.execute('INSERT INTO doctors VALUES (%s, %s, %s,%s,%s)', (docname, docemail,dochospital,dochospitaladdress, docpassword))
+            cursor.execute('INSERT INTO doctors VALUES (%s, %s, %s,%s,%s,%s)', (docname, docemail,dochospital,dochospitaladdress,dochospitalweb, docpassword))
             mysql.connection.commit()
             msg = 'You have successfully registered!'
             #after successfully inserted redirect to loginpage
