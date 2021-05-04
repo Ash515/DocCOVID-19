@@ -7,8 +7,9 @@
     <body>
         <div class="main">
             <div class="inline">
-            <h2>Hospital name, Address</h2>
-            
+                {% for row in hospdata %}
+            <h2>{row.dhospital}</h2>
+                {% endfor %}
             </div>
 
             <div class="inline" id="back"><a href="/main"><b>Back</b>  </a></div>

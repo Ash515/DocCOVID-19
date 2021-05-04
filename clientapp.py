@@ -26,8 +26,8 @@ def main():
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('SELECT * FROM doctors')
         # Fetch one record and return result
-        docdata= cursor.fetchall()
-        return render_template('main.html', useremail=session['user_email'],docdata=docdata)
+        hospdata= cursor.fetchall()
+        return render_template('main.html', useremail=session['user_email'],hospdata=hospdata)
     # User is not loggedin redirect to login page
      return redirect(url_for('userlogin'))
 
@@ -146,18 +146,12 @@ def notifications():
     
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
     cursor.execute('SELECT * FROM patients')
-    data = cursor.fetchall() #data from database
+    profiledata = cursor.fetchall() #data from database
     cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
     cur.execute('SELECT * FROM symptoms')  
     symdata = cur.fetchall() #data from database 
-    return render_template("notifications.html", value=data,val=symdata)
+    return render_template("notifications.html", profiledata=profiledata,symdata=symdata)
 
-@app.route('/hospitals')
-def hospitals():
-    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cursor.execute('SELECT * FROM doctors')
-    hospdata = cursor.fetchall() #data from database
-    return render_template('hospitalmain.html',hospdata=hospdata)
 
  
 
@@ -174,6 +168,10 @@ def hospitals():
 def docmain():
     if 'docloggedin' in session:
         # User is loggedin show them the home page
+      #  cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+       # cursor.execute('SELECT * FROM doctors WHERE dmail = %s AND dpassword = %s', (docemail, docpassword))
+        # Fetch one record and return result
+        #patientnotify= cursor.fetchone()
         return render_template('docmain.html', docemail=session['doc_email'])
     # User is not loggedin redirect to login page
     return redirect(url_for('doclogin'))
@@ -214,6 +212,7 @@ def doctorregistration():
         docname = request.form['doc_uname']
         docemail = request.form['doc_email']
         dochospital= request.form['hosp_name']
+        dochospitaladdress= request.form['hosp_addr']
         docpassword = request.form['doc_psw']
         docconpassword = request.form['doc_conpsw']
      
@@ -234,7 +233,7 @@ def doctorregistration():
             msg = 'Please fill out the form!'
         else:
             # Account doesnt exists and the form data is valid, now insert new account into accounts table
-            cursor.execute('INSERT INTO doctors VALUES (%s, %s, %s,%s)', (docname, docemail,dochospital, docpassword))
+            cursor.execute('INSERT INTO doctors VALUES (%s, %s, %s,%s,%s)', (docname, docemail,dochospital,dochospitaladdress, docpassword))
             mysql.connection.commit()
             msg = 'You have successfully registered!'
             #after successfully inserted redirect to loginpage

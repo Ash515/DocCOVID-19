@@ -12,7 +12,7 @@
          <h3>{{session.user_email}} !</h3>
       </div>
       <div class="inline" id="notify" >
-         <a href="/usernotification">Notification</a>
+         <a href="/usernotification">Notifications</a>
       </div>
          
        <div class="inline" id="log">
@@ -23,12 +23,20 @@
           <h3>Hospitals</h3>
    </div>
    <div class="hosp-list">
-    <div class="hosp-head"> <div class="hosp-inline" id="hosplist" ><h3>Hospital</h3></div></div>
+    
      <ul>
-        {% for row in docdata %}
+        {% for row in hospdata %}
         <li>
-           <div><a href="/hospitals">{{row.dhospital}}</a> </div>
-        </li>
+           <div class="hosp-data">
+               <b>Hospital Name:</b>  {{row.dhospital}}<br>
+               <b>Address :</b>  {{row.haddress}}. <br>
+              <b>Doctor Name:</b> {{row.dname}} <br>
+             <b> Email Address:</b> {{row.dmail}}<br>
+             <div class="data-info"><a href ="/userprofile" id="pro">Share Profile</a></div><div class="data-info" id="sym"><a href ="/symptoms">Share Symptoms</a></div>
+
+              
+           </div>
+        </li><br><br><br><br><br><br><hr>
         {% endfor %}
      </ul>
      
