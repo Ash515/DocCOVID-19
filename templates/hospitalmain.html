@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type=text/css href="{{url_for('static',filename='hospitalmain.css')}}">
+        <title>Hospital name</title>
+    </head>
+    <body>
+        <div class="main">
+            <div class="inline">
+            <h2>Hospital name, Address</h2>
+            
+            </div>
+
+            <div class="inline" id="back"><a href="/main"><b>Back</b>  </a></div>
+        </div>
+        <div class="doctors-details">
+           <h3> doctor name</h3> 
+           <h3>Phone number</h3>
+           <h3>Email ID</h3>
+        </div>
+        <div class="user-info">
+        <div class="inline-info" id="profile-info">
+           <a href="/userprofile"><h3>Add your profile</h3></a>
+        </div>
+        <div class="inline-info" id="symp-info">
+            <a href="/symptoms"><h3>Select your symptoms</h3></a>
+         </div></div>
+    </body>
+</html>

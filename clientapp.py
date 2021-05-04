@@ -141,10 +141,16 @@ def usernotifications():
 def notifications():
     
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cursor.execute('SELECT * FROM patients ') 
-    data = cursor.fetchall() #data from database 
-    return render_template("notifications.html", value=data)
+    cursor.execute('SELECT * FROM patients')
+    data = cursor.fetchall() #data from database
+    cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cur.execute('SELECT * FROM symptoms')  
+    symdata = cur.fetchall() #data from database 
+    return render_template("notifications.html", value=data,val=symdata)
 
+@app.route('/hospitals')
+def hopitals():
+    return render_template('hospitalmain.html')
 
  
 
@@ -164,14 +170,6 @@ def docmain():
         return render_template('docmain.html', docemail=session['doc_email'])
     # User is not loggedin redirect to login page
     return redirect(url_for('doclogin'))
-
-def example(): 
-    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cursor.execute('SELECT * FROM doctors') 
-    data = cursor.fetchall() #data from database 
-    return render_template("notifications.html", value=data)
-
-
 
 @app.route('/doclog',methods=['POST','GET']) 
 def doclog():

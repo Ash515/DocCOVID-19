@@ -9,7 +9,8 @@
          <h1>Message </h1>
          <h2>Profile Information</h2>
          <div class="profile">
-            1.Name :   <br><br>
+            {% for row in data %}
+            1.Name : {{row.pname}}   <br><br>
             2.Email:   <br><br>
             3.Age  :   <br><br>
             4.DOB : <br><br>
@@ -17,6 +18,7 @@
             6.Bloodgroup :  <br><br>
             7.Phone Number :  <br><br>
             8.Address :  <br>
+            {% endfor %}
         </div>
         <h2>Symptoms</h2>
           <div class="symptoms">
