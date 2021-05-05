@@ -3,40 +3,53 @@
     <head>
         <title>Messages</title>
         <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='notifications.css')}}">
+        <script src="{{url_for('static', filename='index.js')}}"></script>
     </head>
     <body>
         <div class="main">
          <h1>Message </h1>
          <h2>Profile Information</h2>
          <div class="profile">
-            
-            1.Name : {row.pname}  <br><br>
-            2.Email:   <br><br>
-            3.Age  :   <br><br>
-            4.DOB : <br><br>
-            5.Gender :   <br><br>
-            6.Bloodgroup :  <br><br>
-            7.Phone Number :  <br><br>
-            8.Address :  <br>
+            {% for row in profiledata %}
+            1.Name : {{row.name}}  <br><br>
+            2.Email: {{row.email}}   <br><br>
+            3.Age  : {{row.age}}   <br><br>
+            4.DOB : {{row.dob}}  <br><br>
+            5.Gender : {{row.gender}}   <br><br>
+            6.Bloodgroup : {{row.bloodgroup}}  <br><br>
+            7.Phone Number : {{row.pnumber}}   <br><br>
+            8.Address : {{row.address}}  <br>
         
         </div>
         <h2>Symptoms</h2>
           <div class="symptoms">
-              1.Chest Pain :   <br><br>
-              2.Difficulty/Shortness of Breath :   <br><br>
-              3. Fatigue :   <br><br>
-              4.Fever :    <br><br>
-              5.Low Appetite :   <br><br>
-              6.Muscle Pain  <br><br>
+              1.Chest Pain : {{row.chestpain}}   <br><br>
+              2.Difficulty/Shortness of Breath :{{row.breathe}}    <br><br>
+              3. Fatigue :{{row.fatigue}}    <br><br>
+              4.Fever : {{row.fever}}    <br><br>
+              5.Low Appetite :  {{row.lowappetite}}  <br><br>
+              6.Muscle Pain: {{row.musclepain}}  <br><br>
           </div>
+            {% endfor %}
 
-
-            <form action="" class="filehandler">
-                <input type="file" class="myFile" name="filename">
-                <input type="submit" id="submit">
+            <form action="/results" class="filehandler" method="POST">
+                <input type="file" class="myFile" name="res_file">
+                 Doctors Result:   <select name='doc_res' id="docres">
+                     <option>Yes</option>
+                     <option>Mild</option>
+                     <option>No</option>
+                    </select>
+                 <div id="ml-res">ML Result:&nbsp;&nbsp;&nbsp;&nbsp;<select id="mlres" name='ml_res'>
+                        <option>Yes</option>
+                        <option>Mild</option>
+                        <option>No</option>
+                       </select></div><br>
+                   
+                  <div id="inlinesubmit"><input type="submit" id="submit"></div>
+                  <div class="gresult" id="inlinesubmit">Grant Result: <input type="text"></div>
               </form>
         </div>
-        <div class="cancel">
+        <div class="cancel" >
             <a href="{{url_for('docmain')}}"><input type="button" value="Cancel"></a>
         </div>
        

@@ -19,7 +19,7 @@ h2{
 }
 form{
     background-color: rgb(30, 22, 49);
-    height:50px;
+    height:130px;
     padding-left: 30px;
     padding-top: 20px;
     padding-bottom: 10px;
@@ -29,6 +29,8 @@ form{
     width: 100px;
     height: 30px;
     cursor: pointer;
+    margin-left:5px;
+    
 }
 .myfile{
     width: 100px;
@@ -71,4 +73,18 @@ input[type=button] {
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #b30000; 
+  }
+  select{
+    width: 100px;
+    height: 30px;
+  }
+  #ml-res{
+    margin-left: 278px;
+    margin-top: 5px;
+  }
+  #inlinesubmit{
+    display: inline-flex;
+  }
+  .gresult{
+    margin-left: 105px;
   }

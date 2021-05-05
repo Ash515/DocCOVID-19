@@ -160,17 +160,17 @@ li{
   #sym{
       margin-left:100px ;
       background-color: green;
-      width:150px;
+      width:100px;
       height:30px;
       color:white;
       border-radius: 10px;
-      padding-left: 10px;
+      padding-left: 30px;
       padding-top: 10px;
   }
   #pro{
     
     background-color: rgba(128, 0, 21, 0.658);
-    width:150px;
+    width:110px;
     height:30px;
     color:white;
     border-radius: 10px;

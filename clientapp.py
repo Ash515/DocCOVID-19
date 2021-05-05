@@ -132,17 +132,6 @@ def userprofile():
 def usernotifications():
     return render_template('usernotification.html')
 
-@app.route('/notifications')
-def notifications():
-    
-    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cursor.execute('SELECT * FROM patients')
-    profiledata = cursor.fetchall() #data from database
-    cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cur.execute('SELECT * FROM symptoms')  
-    symdata = cur.fetchall() #data from database 
-    return render_template("notifications.html", profiledata=profiledata,symdata=symdata)
-
 
  
 
@@ -163,7 +152,10 @@ def docmain():
         cursor.execute('SELECT * FROM profiles')
         # Fetch one record and return result
         patientnotify= cursor.fetchall()
-        return render_template('docmain.html', docemail=session['doc_email'],patientnotify=patientnotify)
+        cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cur.execute('SELECT * FROM doctors')
+        doctorlog=cur.fetchall()
+        return render_template('docmain.html', docemail=session['doc_email'],patientnotify=patientnotify,doctorlog=doctorlog)
     # User is not loggedin redirect to login page
     return redirect(url_for('doclogin'))
 
@@ -225,7 +217,7 @@ def doctorregistration():
             msg = 'Please fill out the form!'
         else:
             # Account doesnt exists and the form data is valid, now insert new account into accounts table
-            cursor.execute('INSERT INTO doctors VALUES (%s, %s, %s,%s,%s,%s)', (docname, docemail,dochospital,dochospitaladdress,dochospitalweb, docpassword))
+            cursor.execute('INSERT INTO doctors VALUES (%s, %s, %s,%s,%s,%s)', (docname, docemail,dochospital,dochospitalweb,dochospitaladdress, docpassword))
             mysql.connection.commit()
             msg = 'You have successfully registered!'
             #after successfully inserted redirect to loginpage
@@ -240,6 +232,28 @@ def doctorregistration():
 def doctorlogout():
     session.pop('doc_email')
     return redirect(url_for('index'))
+
+@app.route('/notifications/<id>')
+def notifications(id):
+  
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute('SELECT * FROM profiles WHERE email= %s',(id,))
+    profiledata = cursor.fetchall() #data from database
+    
+    return render_template("notifications.html", profiledata=profiledata)
+
+@app.route('/results',methods=['POST'])
+def results():
+    if request.method=='POST':
+        resultimage=request.form['res_file']
+        doctorresult=request.form['doc_res']
+        mlresult=request.form['ml_res']
+        cursor=mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('INSERT INTO results VALUES (%s,%s,%s)',(resultimage,doctorresult,mlresult))
+        mysql.connection.commit()
+        
+
+    return redirect(url_for('docmain'))
 
 
 if __name__=='__main__':

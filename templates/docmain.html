@@ -6,11 +6,19 @@
     </head>
     <body>
         <div class="main">
+            <div class="doc-inline">
              <h3>
                  Doctor's Portal
              </h3>
+             </div>
+             <div class="doc-inline" id="hosp-name">
+             {% for doc in doctorlog: %}
+        {{doc.dname}} | {{doc.dhospital}}
+         {% endfor %}
+         </div>
         </div>
         
+
         <div >
             <button class="logout" id="logout"><a href={{ url_for('doctorlogout') }}>Logout</a></button>
         </div>
@@ -18,7 +26,7 @@
                 <ul>
                     {% for row in patientnotify %}
                     <li>
-                        <a href="/notifications"><div class="notify-container">{{ row.name }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; {{ row.prodate }}</div></a>
+                        <a href="/notifications/{{row.email}}"><div class="notify-container">{{ row.name }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; {{ row.prodate }}</div></a>
                     </li><br>
                     
                    {% endfor %}

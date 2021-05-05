@@ -77,4 +77,10 @@ a{
   ::-webkit-scrollbar-thumb:hover {
     background: #b30000; 
   }
+  .doc-inline{
+      display: inline-flex;
+  }
+  #hosp-name{
+      margin-left:950px;
+  }
 
