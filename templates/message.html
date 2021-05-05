@@ -1,16 +1,19 @@
 <html>
 <head>
+    <title>user messages</title>
     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='message.css')}}">
 </head>
 
 <body>
-<center>
-
-    <p>Message </p>
-    <div class="main">
-
-    </div>
-
-</center>
+    <ul>
+        <li id="notification-list">
+          <div class="name">
+            <div class="file"><b>File &nbsp;&nbsp;&nbsp;: </b>  </div><br>                      
+            <div class="result"><b> Result: </b> </div> <br>
+            <div class="advice"> <b>Advice: </b> </div> 
+          </div>
+        </li><br>
+       
+      </ul>
 </body>
 </html>

@@ -95,7 +95,7 @@ input[type=button] {
     color:black;
     display: inline-flex;
   }
-  #f-submit{
+  button{
     width: 200px;
     height: 30px;
     margin-top: 10px;
@@ -103,7 +103,10 @@ input[type=button] {
     cursor: pointer;
     color:white;
   }
-  #f-submit:hover{
+  button:hover{
     background-color: rgb(58, 114, 58);
+  }
+  #textarea{
+    height:20px;
   }
   

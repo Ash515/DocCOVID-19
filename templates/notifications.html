@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Messages</title>
+        <title>Notifications</title>
         <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='notifications.css')}}">
         <script src="{{url_for('static', filename='index.js')}}"></script>
     </head>
     <body>
         <div class="main">
-         <h1>Message </h1>
+         <h1>Message </h1> 
          <h2>Profile Information</h2>
          <div class="profile">
             {% for row in profiledata %}
@@ -47,18 +47,12 @@
                      
                         <option>No</option>
                        </select></div><br>
-                   
-                  <div id="inlinesubmit"><input type="submit" id="submit"></div>
-                  <div id="inlinesubmit" class="gresult" ></div>
+                       <div id="gspace"><button onclick="gresult()">Grant Result:</button></div>
+                       <div id="gspace"><input type="text" name="f_res" id="textarea"></div><br>
+                 
                  
               </form>
-              <div class="final_res">
-                 <form action="/finalresult" method="post">
-                    <div id="gspace"><button onclick="gresult()">Grant Result:</button></div>
-                    <div id="gspace"><input type="text" name="f_res" id="textarea"></div><br>
-                    <input type="submit" value="submit" id="f-submit">
-                  </form>
-                </div>
+              
         </div>
         
         <div class="cancel" >

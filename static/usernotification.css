@@ -2,32 +2,33 @@ body{
   background-color: rgb(161, 113, 96);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-h3{
-color:white;
-font-weight: bold;
-margin-left: 30px;
-margin-top: 30px;
-}
-.notify{
-  display: inline-flex;
-}
-#back{
-  margin-left:1200px;
-}
-#notification-list{
-   background-color: white;
-   width:1400px;
-   height:150px;
-   border-radius: 10px;
-}
 li{
   list-style-type: none;
 }
- a{
-  text-decoration: none;
-  color:white;
+.notify{
+  display: inline-flex;
+  margin-left: 30px;
+}
+#back{
+  margin-left: 1100px;
+  
   font-weight: bold;
 }
-.name{
-  margin-left: 20px;padding-top:20px;
+a{
+  
+color:white;
+  text-decoration: none;
+}
+.user-notify{
+  background-color: indigo;
+  color:white;
+  width: 900px;
+  height:50px;
+  cursor: pointer;
+  padding-left: 30px;
+  border-radius: 10px;
+  padding-top: 10px;
+}
+.user-notify:hover{
+  background-color: blue;
 }

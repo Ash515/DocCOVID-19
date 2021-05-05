@@ -130,7 +130,14 @@ def userprofile():
 
 @app.route('/usernotification')
 def usernotifications():
-    return render_template('usernotification.html')
+  
+   
+   return render_template('usernotification.html')
+
+@app.route('/message')
+def messages():
+    
+    return render_template('message.html')
 
 
  
@@ -248,19 +255,13 @@ def results():
         resultimage=request.form['res_file']
         doctorresult=request.form['doc_res']
         mlresult=request.form['ml_res']
+        fresult=request.form['f_res']
         cursor=mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('INSERT INTO results VALUES (%s,%s,%s)',(resultimage,doctorresult,mlresult))
+        cursor.execute('INSERT INTO results VALUES (%s,%s,%s,%s)',(resultimage,doctorresult,mlresult,fresult))
         mysql.connection.commit()
     return redirect(url_for('docmain'))
     
-@app.route('/finalresult',methods=['POST'])
-def finalresult():
-    if request.method=='POST':
-        result=request.form['f_res']
-        cursor=mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('INSERT INTO finalresults VALUES(%s)',(result,))
-        mysql.connection.commit()
-    return redirect(url_for('docmain'))
+
 
 
 if __name__=='__main__':
