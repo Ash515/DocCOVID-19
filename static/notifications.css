@@ -91,3 +91,19 @@ input[type=button] {
   button{
     cursor: pointer;
   }
+  #gspace{
+    color:black;
+    display: inline-flex;
+  }
+  #f-submit{
+    width: 200px;
+    height: 30px;
+    margin-top: 10px;
+    background-color: green;
+    cursor: pointer;
+    color:white;
+  }
+  #f-submit:hover{
+    background-color: rgb(58, 114, 58);
+  }
+  

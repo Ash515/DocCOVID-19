@@ -251,8 +251,15 @@ def results():
         cursor=mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('INSERT INTO results VALUES (%s,%s,%s)',(resultimage,doctorresult,mlresult))
         mysql.connection.commit()
-        
-
+    return redirect(url_for('docmain'))
+    
+@app.route('/finalresult',methods=['POST'])
+def finalresult():
+    if request.method=='POST':
+        result=request.form['f_res']
+        cursor=mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('INSERT INTO finalresults VALUES(%s)',(result,))
+        mysql.connection.commit()
     return redirect(url_for('docmain'))
 
 

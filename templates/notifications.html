@@ -34,22 +34,33 @@
 
             <form action="/results" class="filehandler" method="POST">
                 <input type="file" class="myFile" name="res_file">
+              <!--  Doctors Result :<input type="text" id="docres">
+                 ML Result: <input type="text" id="mlres">-->
+
                  Doctors Result:   <select name='doc_res' id="docres">
                      <option>Yes</option>
-                     <option>Mild</option>
+                   
                      <option>No</option>
                     </select>
                  <div id="ml-res">ML Result:&nbsp;&nbsp;&nbsp;&nbsp;<select id="mlres" name='ml_res'>
                         <option>Yes</option>
-                        <option>Mild</option>
+                     
                         <option>No</option>
                        </select></div><br>
                    
                   <div id="inlinesubmit"><input type="submit" id="submit"></div>
                   <div id="inlinesubmit" class="gresult" ></div>
+                 
               </form>
-              <button onclick="gresult()">Grant Result:</button> <input type="text" id="gspace">
+              <div class="final_res">
+                 <form action="/finalresult" method="post">
+                    <div id="gspace"><button onclick="gresult()">Grant Result:</button></div>
+                    <div id="gspace"><input type="text" name="f_res" id="textarea"></div><br>
+                    <input type="submit" value="submit" id="f-submit">
+                  </form>
+                </div>
         </div>
+        
         <div class="cancel" >
             <a href="{{url_for('docmain')}}"><input type="button" value="Cancel"></a>
         </div>
