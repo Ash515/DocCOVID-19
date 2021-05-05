@@ -8,8 +8,10 @@ body{
     font-size:25px;
     background-color: rgba(24, 51, 54, 0.507);
     color:white;
-    border: black medium solid;
-     text-align: center;
+    border: rgb(0, 0, 0) medium solid;
+     
+     padding-left: 150px;
+     width: 1350px;
      
 }
 .logout{
@@ -21,7 +23,7 @@ body{
     text-align: right;
     text-decoration: none;
     font-size: 16px;
-    margin: 4px 2px;
+    
     cursor: pointer;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -33,6 +35,9 @@ body{
     text-decoration: none;
     color:white;
 }
+#inlineflex{
+    display: inline-flex;
+}
 
 .inline{
     display: inline-flex;
@@ -43,20 +48,25 @@ body{
     color:white;
 }
 #log{
-    margin-left:700px;
-}
-#notify{
-    background-color: red;
-    width:130px;
-    height:30px;
-    border-radius: 10px;
-    padding-left: 10px;
+    margin-left:100px;
+    height: 50px;
     padding-top: 10px;
 }
-#notify:hover{
-    background-color: green;
+.notify{
+    background-color: #f3527a;
+    height: 35px;
+    font-size: 18px;
+    border-radius: 10px;
+    margin-left:650px;
+    margin-top: 10px;
+    width: 150px;
+    padding-left: 20px;
+    padding-top: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
+.notify:hover{
+    background-color: #b13453;
+}
 
 .profile{
     display: inline-flex;

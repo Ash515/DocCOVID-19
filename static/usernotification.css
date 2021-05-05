@@ -1,12 +1,13 @@
 body{
-  background-color: rgb(161, 113, 96);
+  background-image: url('/static/images/notify.jpeg');
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-size: 1550px 900px;
 }
 li{
   list-style-type: none;
 }
 #notify-title{
-  background-color: indigo;
+  background-color: rgb(102, 14, 63);
   width: 300px;
   padding-left: 20px;
   color: white;
@@ -18,13 +19,14 @@ li{
 }
 #back{
   margin-left: 900px;
-  background-color: orange;
-  width:100px;
+  background-color: rgb(238, 125, 125);
+  width:90px;
   height:30px;
   font-weight: bold;
-  padding-left: 10px;
+  padding-left: 30px;
   padding-top: 10px;
   border-radius: 10px;
+  cursor: pointer;
 }
 a{
   
@@ -32,7 +34,7 @@ color:white;
   text-decoration: none;
 }
 .user-notify{
-  background-color: rgb(165, 143, 180);
+  background-color: rgb(83, 4, 4);
   color:white;
   
   width: 500px;
@@ -51,7 +53,7 @@ padding-left: 20px;
 padding-top: 10px;
 width: 300px;
 height: 30px;
-background-color: rgb(21, 11, 43);
+background-color: rgb(209, 181, 105);
 }
 #img{
   border-radius: 5px;
@@ -61,11 +63,11 @@ padding-left: 20px;
 padding-top: 10px;
 width: 300px;
 height: 30px;
-background-color: brown;
+background-color: rgb(29, 61, 112);
 }
 #dresult{
   border-radius: 5px;
-  background-color: blue;
+  background-color: rgb(209, 181, 105);
   margin-top: 50px;
   margin-left: 70px;
   padding-left: 20px;
@@ -81,7 +83,7 @@ height: 30px;
 padding-top: 10px;
 width: 300px;
 height: 30px;
-background-color: orange;
+background-color:  rgb(29, 61, 112);
 }
 #gresult{
       margin-top: 50px;
@@ -91,7 +93,7 @@ background-color: orange;
 padding-top: 10px;
 width: 300px;
 height: 30px;
-background-color: green;
+background-color: rgb(209, 181, 105);
 
 }
 #mail:hover{
