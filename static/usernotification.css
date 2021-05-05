@@ -5,14 +5,26 @@ body{
 li{
   list-style-type: none;
 }
+#notify-title{
+  background-color: indigo;
+  width: 300px;
+  padding-left: 20px;
+  color: white;
+  border-radius: 10px;
+}
 .notify{
   display: inline-flex;
   margin-left: 30px;
 }
 #back{
-  margin-left: 1100px;
-  
+  margin-left: 900px;
+  background-color: orange;
+  width:100px;
+  height:30px;
   font-weight: bold;
+  padding-left: 10px;
+  padding-top: 10px;
+  border-radius: 10px;
 }
 a{
   
@@ -20,15 +32,80 @@ color:white;
   text-decoration: none;
 }
 .user-notify{
-  background-color: indigo;
+  background-color: rgb(165, 143, 180);
   color:white;
-  width: 900px;
-  height:50px;
+  
+  width: 500px;
+  height:450px;
   cursor: pointer;
-  padding-left: 30px;
+  padding-left: 50px;
   border-radius: 10px;
-  padding-top: 10px;
+  padding-top: 50px;
+  margin-left:400px;
 }
-.user-notify:hover{
+#mail{
+  border-radius: 5px;
+margin-top: 20px;
+margin-left: 70px;
+padding-left: 20px;
+padding-top: 10px;
+width: 300px;
+height: 30px;
+background-color: rgb(21, 11, 43);
+}
+#img{
+  border-radius: 5px;
+margin-top: 30px;
+margin-left: 70px;
+padding-left: 20px;
+padding-top: 10px;
+width: 300px;
+height: 30px;
+background-color: brown;
+}
+#dresult{
+  border-radius: 5px;
   background-color: blue;
+  margin-top: 50px;
+  margin-left: 70px;
+  padding-left: 20px;
+padding-top: 10px;
+width: 300px;
+height: 30px;
 }
+#mlresult{
+    margin-top: 50px;
+    margin-left: 70px;
+    border-radius: 5px;
+    padding-left: 20px;
+padding-top: 10px;
+width: 300px;
+height: 30px;
+background-color: orange;
+}
+#gresult{
+      margin-top: 50px;
+      margin-left: 70px;
+      border-radius: 5px;
+      padding-left: 20px;
+padding-top: 10px;
+width: 300px;
+height: 30px;
+background-color: green;
+
+}
+#mail:hover{
+  background-color: rgba(7, 7, 39, 0.5);
+}
+#img:hover{
+background-color: rgba(165, 42, 42, 0.425);
+}
+#dresult:hover{
+  background-color:rgba(0, 0, 255, 0.452);
+  }
+#mlresult:hover{
+    background-color:rgba(255, 166, 0, 0.39);
+}
+#gresult:hover{
+  background-color:rgba(0, 128, 0, 0.418);
+  }

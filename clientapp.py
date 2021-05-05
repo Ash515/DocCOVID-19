@@ -1,9 +1,13 @@
 from MySQLdb import connections
-from flask import Flask, render_template,url_for,redirect,flash, request, redirect,session
+from flask import Flask, render_template,send_file,url_for,redirect,flash, request, redirect,session
 from flask.wrappers import Response
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
 import bcrypt
+import base64
+import PIL
+import os
+import io
 import re
 app=Flask(__name__,template_folder='templates')
 
@@ -127,57 +131,23 @@ def userprofile():
     else:
         return render_template('profile.html')
 
-'''
+
 @app.route('/usernotification')
-def usernotifications():
+def usernotification():
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
     cursor.execute('SELECT * FROM results')
-    resdata = cursor.fetchall() #data from database
-    return render_template("usernotification.html", resdata=resdata)
-
-   
-
-@app.route('/message:<id>')
-def message(id):
-    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cursor.execute('SELECT * FROM results WHERE rmail=%s',(id,))
     docdata = cursor.fetchall() #data from database
-    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cursor.execute('SELECT * FROM patients')
-    patdata = cursor.fetchall()
- 
-
     
-    return render_template("message.html",patdata=patdata,docdata=docdata)
+   
+    return render_template("usernotification.html",docdata= docdata)
+
+
 '''
-
+cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cur.execute('SELECT image FROM results' )
+    imgdata = cur.fetchall() #data from databas
+    a=read_file(imgdata)
 '''
-@app.route('/usernotification')
-def usernotification():
-    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cursor.execute('SELECT * FROM results WHERE rmail= ')
-    docdata = cursor.fetchall() #data from database
-    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cursor.execute('SELECT * FROM patients')
-    patientsdata = cursor.fetchall() #data from database
-
-    return render_template("usernotification.html", patientsdata= patientsdata, docdata= docdata )
-
-@app.route('/message')
-def message():
-    return render_template('message.html')
-'''
-@app.route('/usernotification')
-def usernotification():
-    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cursor.execute('SELECT * FROM results')
-    docdata = cursor.fetchall() #data from database
-    return render_template("usernotification.html",  docdata= docdata )
-
-
- 
-
-
 
 
 
