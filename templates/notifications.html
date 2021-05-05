@@ -46,8 +46,9 @@
                        </select></div><br>
                    
                   <div id="inlinesubmit"><input type="submit" id="submit"></div>
-                  <div class="gresult" id="inlinesubmit">Grant Result: <input type="text"></div>
+                  <div id="inlinesubmit" class="gresult" ></div>
               </form>
+              <button onclick="gresult()">Grant Result:</button> <input type="text" id="gspace">
         </div>
         <div class="cancel" >
             <a href="{{url_for('docmain')}}"><input type="button" value="Cancel"></a>

@@ -88,3 +88,6 @@ input[type=button] {
   .gresult{
     margin-left: 105px;
   }
+  button{
+    cursor: pointer;
+  }
