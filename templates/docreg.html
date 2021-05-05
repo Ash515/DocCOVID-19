@@ -5,28 +5,22 @@
     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='docreg.css')}}">
     <link rel="icon" href="/static/images/corona.jpg">
 </head>
-<body style="padding: 5px 100px 20px 20px;
-">
- 
-<div class="head"><center><h3> Doctor's Registration</h3></center>
-
+<body style="padding: 5px 100px 20px 20px;">
+ <div class="head"><center><h3> Doctor's Registration</h3></center>
 <div class="main">
   <form action="/docreg" method="POST">
     <label for="name"> Name</label>
     <input type="text" id="name" name="doc_uname" placeholder="Username.." required>
-
     <label for="email">Email</label>
     <input type="text" id="ename" name="doc_email" placeholder="honio@gmail.com" required>
     <label for="email">Hospital Name</label>
     <input type="text" id="ename" name="hosp_name" placeholder="Type Your Hospital Name">
-    
     <label for="email">Hospital Address</label>
     <input type="text" id="ename" name="hosp_addr" placeholder="Type Your Hospital Address">
     <label for="email">Hospital Website</label>
     <input type="text" id="ename" name="hosp_web" placeholder="Type Your Hospital Website">
     <label for="password">Password</label>
     <input type="password" id="password" name="doc_psw" placeholder="type password" required>
-    
     <label for="c_pass">Confirm password</label>
     <input type="text" id="c_pass" name="doc_conpsw" required >
      {{msg}}
@@ -34,6 +28,5 @@
     <a href="{{url_for('index')}}"><input type="button" value="Cancel"></a>
   </form>
 </div>
-
 </body>
 </html>

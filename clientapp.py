@@ -101,13 +101,13 @@ def userregistration():
 def userlogout():
     session.pop('user_email')
     return redirect(url_for('index'))
+    
 @app.route('/userforgot')
 def userforgot():
     return render_template('userpassword.html')
 
 @app.route('/userprofile',methods=['GET','POST'])
 def userprofile():
-
     if request.method == 'POST':
         profilename=request.form['pro_name']
         profileemail=request.form['pro_email']
@@ -137,23 +137,7 @@ def usernotification():
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
     cursor.execute('SELECT * FROM results')
     docdata = cursor.fetchall() #data from database
-    
-   
     return render_template("usernotification.html",docdata= docdata)
-
-
-'''
-cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cur.execute('SELECT image FROM results' )
-    imgdata = cur.fetchall() #data from databas
-    a=read_file(imgdata)
-'''
-
-
-
-
-
-
 
 
 @app.route('/docmain')
@@ -267,8 +251,6 @@ def results():
         mysql.connection.commit()
     return redirect(url_for('docmain'))
     
-
-
 
 if __name__=='__main__':
     app.debug = True

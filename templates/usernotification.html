@@ -15,15 +15,10 @@
       <li>{% if row.rmail==session.user_email%}
         <div class="user-notify">
           <div id="mail">
-       
             <b>Email ID :</b>  {{row.rmail}}
-         
-              </div>
-             
-         <div id="img">
-       
-        <b>CT Image :</b>  {{row.image}}
-     
+          </div>
+             <div id="img">
+             <b>CT Image :</b>  {{row.image}}
           </div>
           <div id="dresult">
          <b>Doctor's Result:</b> {{row.dresult}}
@@ -34,13 +29,11 @@
           <div id="gresult">
          <b>Grant Result:</b> {{row.gresult}}
           </div>
-        
         </div>
         {% endif %}
       </li>
       {% endfor %}
     </ul>
-
 </div></div>
 </body>
 </html>

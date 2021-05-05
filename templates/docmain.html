@@ -18,8 +18,6 @@
          {% endfor %}
          </div>
         </div>
-        
-
         <div >
             <button class="logout" id="logout"><a href={{ url_for('doctorlogout') }}>Logout</a></button>
         </div>
@@ -29,10 +27,8 @@
                     <li>
                         <a href="/notifications/{{row.email}}"><div class="notify-container">{{ row.name }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; {{ row.prodate }}</div></a>
                     </li><br>
-                    
-                   {% endfor %}
+                    {% endfor %}
                 </ul>
              </div>
-        
-    </body>
+</body>
 </html>

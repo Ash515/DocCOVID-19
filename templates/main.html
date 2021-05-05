@@ -2,8 +2,7 @@
 <head> 
 <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='main.css')}}" >
 <title>DocCOVID 19 Portal</title>
-
-  <link rel="icon" href="/static/images/corona.jpg">
+<link rel="icon" href="/static/images/corona.jpg">
 </head>
 <body>
     <div class="page" id="inlineflex">
@@ -14,23 +13,17 @@
      <div class="inline" id="log" id="inlineflex">
       <button class="logout" id="logout"><a href={{ url_for('userlogout') }}>Logout</a></button>
     </div>
-    
     </div>
-    
-    <div >
+     <div >
       <div  class="inline" id="user">
          <h3>{{session.user_email}} !</h3>
       </div>
-      
-         
-      
-   </div>
+      </div>
    <div class="hosp-btn">
           <h3>Hospitals</h3>
    </div>
    <div class="hosp-list">
-    
-     <ul>
+    <ul>
         {% for row in hospdata %}
         <li>
            <div class="hosp-data">
@@ -39,25 +32,11 @@
               <b>Doctor Name:</b> {{row.dname}} <br>
              <b> Email Address:</b> {{row.dmail}}<br>
              <div class="data-info"><a href ="/userprofile" id="pro">Share Profile</a></div><div class="data-info" id="sym"><a href ="{{row.dwebsite}}" target="_blank">Website</a></div>
-
-              
-           </div>
+            </div>
         </li><br><br><br><br><br><br><hr>
         {% endfor %}
      </ul>
-     
-        
-            
-           
-
-</div>
-
-     
-    
-
- 
-
-    
+   </div>
 </body>
 </html>
 

@@ -2,7 +2,6 @@
 <html>
     <head>
         <title>Notifications</title>
-     
         <link rel="icon" href="/static/images/corona.jpg">
         <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='notifications.css')}}">
         <script src="{{url_for('static', filename='index.js')}}"></script>
@@ -21,7 +20,6 @@
             6.Bloodgroup : {{row.bloodgroup}}  <br><br>
             7.Phone Number : {{row.pnumber}}   <br><br>
             8.Address : {{row.address}}  <br>
-        
         </div>
         <h2>Symptoms</h2>
           <div class="symptoms">
@@ -33,40 +31,23 @@
               6.Muscle Pain: {{row.musclepain}}  <br><br>
           </div>
             {% endfor %}
-
-            <form action="/results" class="filehandler" method="POST">
+           <form action="/results" class="filehandler" method="POST">
                 <input type="file" class="myFile" name="res_file">
-              <!--  Doctors Result :<input type="text" id="docres">
-                 ML Result: <input type="text" id="mlres">-->
-
-                 Doctors Result:   <select name='doc_res' id="docres">
+                Doctors Result:   <select name='doc_res' id="docres">
                      <option>Yes</option>
-                   
-                     <option>No</option>
+                    <option>No</option>
                     </select>
-                    
                  <div id="ml-res">ML Result:&nbsp;&nbsp;&nbsp;&nbsp;<select id="mlres" name='ml_res'>
                         <option>Yes</option>
-                     
                         <option>No</option>
                        </select></div><br>
                        <div id="email-res">Email :<input type="text" name="res_mail" id="email-text"></div>
                        <div id="gspace"><button onclick="gresult()">Grant Result:</button></div>
                        <div id="gspace"><input type="text" name="f_res" id="textarea"></div><br>
-                 
-                 
-              </form>
-              
-        </div>
-        
+                 </form>
+              </div>
         <div class="cancel" >
             <a href="{{url_for('docmain')}}"><input type="button" value="Cancel"></a>
         </div>
-       
-
-           
-
-           
-       
-    </body>
+</body>
 </html>

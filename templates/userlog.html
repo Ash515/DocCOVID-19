@@ -7,16 +7,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-
 <div class="log"><center><h2>Patient's Login</h2></center></div>
-
 <form action="/userlog" method="post">
-
-
   <div class="container">
     <label for="uname"><b>User Email</b></label>
     <input type="text" placeholder="Enter User email" name="user_email" required>
-
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="user_psw" required>
     <div class="msg">{{ message }}</div>  
@@ -25,12 +20,9 @@
       <input type="checkbox" checked="checked" name="remember"> Remember me
     </label>
   </div>
-
-  <div class="container" style="background-color:#f1f1f1">
+<div class="container" style="background-color:#f1f1f1">
     <button type="button" class="cancelbtn"><a href="{{url_for('index')}}">Cancel</a></button>
-   
-  </div> 
+</div> 
 </form>
-
 </body>
 </html>

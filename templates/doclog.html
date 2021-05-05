@@ -10,7 +10,6 @@ body{
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: bold;  
 }
-
 .head{
 background-color: #ff00ea;
 color:black;
@@ -74,26 +73,18 @@ a{
 </style>
 </head>
 <body style="padding: 5px 150px 5px 20px;">
-
 <div class="head">
   <center><h2><font color="white">Doctor Sign In</font></h2></center>
-
 <div>
   <form action="/doclog" method='POST'>
-   
-
-    <label for="email">Email</label>
+   <label for="email">Email</label>
     <input type="text" id="ename" name="doc_email" placeholder="honio@gmail.com" required>
-    
     <label for="password">Password</label>
     <input type="password" id="password" name="doc_psw" placeholder="Type password" required>
      {{message}}
-   
- 
     <input type="submit" value="Login">
    <a href="{{url_for('index')}}"><input type="button" value="Cancel"></a>
   </form>
 </div>
-
 </body>
 </html>
