@@ -26,7 +26,7 @@ with the help of *Machine Learning* technology.
 <img src="/image results/docreg.png" width="400px"><img src="/image results/doclog.png" width="400px">
 <img src="/image results/doctormain.png" width="400px"><img src="/image results/Docnotify.png" width="400px">
 <img src="/image results/message1.png" width="400px"><img src="/image results/message2.png" width="400px">
-<img src="/image results/symptoms.png" width="400px">
+
 
 # 🔰 Developers 👨‍💻
 - [Ashwin Kumar Ramaswamy](https://github.com/Ash515)
