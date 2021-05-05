@@ -70,7 +70,7 @@ def userregistration():
         username = request.form['user_name']
         useremail = request.form['user_email']
         userpassword = request.form['user_psw']
-     
+      
         # Check if account exists using MySQL
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('SELECT * FROM patients WHERE pemail = %s', (useremail,))
