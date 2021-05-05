@@ -19,7 +19,7 @@ h2{
 }
 form{
     background-color: rgb(30, 22, 49);
-    height:130px;
+    height:160px;
     padding-left: 30px;
     padding-top: 20px;
     padding-bottom: 10px;
@@ -108,5 +108,8 @@ input[type=button] {
   }
   #textarea{
     height:20px;
+  }
+  #email-text{
+    margin-left: 10px;
   }
   

@@ -127,17 +127,52 @@ def userprofile():
     else:
         return render_template('profile.html')
 
-
+'''
 @app.route('/usernotification')
 def usernotifications():
-  
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute('SELECT * FROM results')
+    resdata = cursor.fetchall() #data from database
+    return render_template("usernotification.html", resdata=resdata)
+
    
-   return render_template('usernotification.html')
+
+@app.route('/message:<id>')
+def message(id):
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute('SELECT * FROM results WHERE rmail=%s',(id,))
+    docdata = cursor.fetchall() #data from database
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute('SELECT * FROM patients')
+    patdata = cursor.fetchall()
+ 
+
+    
+    return render_template("message.html",patdata=patdata,docdata=docdata)
+'''
+
+'''
+@app.route('/usernotification')
+def usernotification():
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute('SELECT * FROM results WHERE rmail= ')
+    docdata = cursor.fetchall() #data from database
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute('SELECT * FROM patients')
+    patientsdata = cursor.fetchall() #data from database
+
+    return render_template("usernotification.html", patientsdata= patientsdata, docdata= docdata )
 
 @app.route('/message')
-def messages():
-    
+def message():
     return render_template('message.html')
+'''
+@app.route('/usernotification')
+def usernotification():
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute('SELECT * FROM results')
+    docdata = cursor.fetchall() #data from database
+    return render_template("usernotification.html",  docdata= docdata )
 
 
  
@@ -255,9 +290,10 @@ def results():
         resultimage=request.form['res_file']
         doctorresult=request.form['doc_res']
         mlresult=request.form['ml_res']
+        resultmail=request.form['res_mail']
         fresult=request.form['f_res']
         cursor=mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('INSERT INTO results VALUES (%s,%s,%s,%s)',(resultimage,doctorresult,mlresult,fresult))
+        cursor.execute('INSERT INTO results VALUES (%s,%s,%s,%s,%s)',(resultmail,resultimage,doctorresult,mlresult,fresult))
         mysql.connection.commit()
     return redirect(url_for('docmain'))
     
