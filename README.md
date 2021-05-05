@@ -15,6 +15,8 @@ with the help of *Machine Learning* technology.
 - Database - (Relational Model) MySQL
 - Technology - Machine Learning 
  
+# 🔰 Image Results ✨
+<img src="/image results/index.png" width="400px">
  
 # 🔰 Developers 👨‍💻
 - [Ashwin Kumar Ramaswamy](https://github.com/Ash515)
