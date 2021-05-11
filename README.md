@@ -31,8 +31,5 @@ with the help of *Machine Learning* technology.
 # 🔰 Working Video 📹 
 [DocCOVID 19](https://drive.google.com/file/d/1e1zJGAakWSCUc8OTGZ1pI6Gstsr_NApn/view?usp=sharing)
 
-# 🔰 Developers 👨‍💻
-- [Ashwin Kumar Ramaswamy](https://github.com/Ash515)
-- [A. Tilakesh Raj](https://github.com/thilake)
 
 
