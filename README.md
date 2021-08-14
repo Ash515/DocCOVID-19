@@ -1,5 +1,5 @@
 # DocCOVID 19 - Early Detection of COVID 19 using CT Scan Images.
-Early detection of COVID-19 by using lungs CT scan images 
+Early detection of COVID-19 by using lungs CT scan images.
 
 
 # Introduction
