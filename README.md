@@ -2,21 +2,21 @@
 Early detection of COVID-19 by using lungs CT scan images.
 
 
-# Introduction
+## Introduction
 Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.
 Most people who fall sick with COVID-19 will experience mild to moderate symptoms and recover without special treatment.
 
-# Objective
+## Objective
 The main objective of this project is to determine the status of corona virus in the patients body by using a user friendly *web application* 
 with the help of *Machine Learning* technology. 
 
-# Tech Stacks
+## Tech Stacks
 - Frontend - HTML, CSS, JavaScript.
 - Backend - Python 
 - Database - (Relational Model) MySQL
 - Technology - Machine Learning 
  
-# Image Results
+## Image Results
 ## Patient's Site
 <img src="/image results/index.png" width="400px"><img src="/image results/userlog.png" width="400px">
 <img src="/image results/userreg.png" width="400px"><img src="/image results/patientmain.png" width="400px">
@@ -28,7 +28,7 @@ with the help of *Machine Learning* technology.
 <img src="/image results/doctormain.png" width="400px"><img src="/image results/Docnotify.png" width="400px">
 <img src="/image results/message1.png" width="400px"><img src="/image results/message2.png" width="400px">
 
-# Working Video
+## Working Video
 [DocCOVID 19](https://drive.google.com/file/d/1e1zJGAakWSCUc8OTGZ1pI6Gstsr_NApn/view?usp=sharing)
 
 ## IEEE Publication 
