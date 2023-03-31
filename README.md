@@ -33,6 +33,6 @@ with the help of *Machine Learning* technology.
 
 ## IEEE Publication 
 [IEEE paper](https://ieeexplore.ieee.org/document/9675663)
-## Developer
-[Ashwin Kumar Ramaswamy](https://github.com/Ash515).
+## Developer(s)
+[Ashwin Kumar Ramaswamy](https://github.com/Ash515)
 
